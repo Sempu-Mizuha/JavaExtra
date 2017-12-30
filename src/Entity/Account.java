@@ -41,7 +41,6 @@ public class Account implements Comparable<Account>{
 
 	@Override
 	public int compareTo(Account o) {
-		// TODO 自動生成されたメソッド・スタブ
 		if(this.accountNo.compareTo(o.accountNo) != 0)
 			return this.accountNo.compareTo(o.accountNo);
 		return 0;

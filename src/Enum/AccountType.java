@@ -27,7 +27,6 @@ public enum AccountType {
 			makeMap();
 			return getType(str);
 		} catch (IllegalArgumentException e) {
-			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 			return null;
 		}

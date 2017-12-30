@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="false" context="typecomment_context" deleted="false" description="作成済みの型のコメント" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.typecomment" name="typecomment">/**
+ * @author ${name:git_config(user.name)}
+ * @version x.x
+ * @since x.x ${git_config} ${year} ${date}
+ * ${tags}
+ */</template></templates>

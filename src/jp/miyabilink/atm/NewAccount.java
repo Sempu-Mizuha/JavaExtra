@@ -17,7 +17,7 @@ public class NewAccount extends Account {
 	 * @param owner
 	 */
 	public NewAccount(int balance, String owner) {
-		super(balance, owner);
+		super(owner, balance);
 		// TODO 自動生成されたコンストラクター・スタブ
 	}
 

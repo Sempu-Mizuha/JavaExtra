@@ -5,3 +5,5 @@ Main
 dao
 dto
 jp.miyabilink.atm
+junit
+test

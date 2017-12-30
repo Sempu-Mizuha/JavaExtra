@@ -46,13 +46,11 @@ public class Book implements Cloneable, Comparable<Book> {
 	 */
 	@Override
 	public Book clone(){
-		// TODO 自動生成されたメソッド・スタブ
 		try {
 			Book result = (Book) super.clone();
 			result.publishDate = (Date) this.publishDate.clone();
 			return result;
 		} catch (CloneNotSupportedException e) {
-			// TODO 自動生成された catch ブロック
 			return null;
 		}
 	}
