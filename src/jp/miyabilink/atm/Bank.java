@@ -9,7 +9,7 @@ import java.io.IOException;
 /**
  * 銀行クラス.
  * @author Sempu-Mizuha
- * @version 1.3
+ * @version 1.4
  * @since 1.0 Sempu-Mizuha 2017/12/29 11:45:09 <br>
  * @since 1.1 Sempu-Mizuha 2017/12/29 15:07:53 <br>
  * @since 1.2 Sempu-Mizuha 2017/12/30 0:05:41 <br>
