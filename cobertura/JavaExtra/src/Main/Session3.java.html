@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ja"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>Session3.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=2;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">AllTests (2017/12/31 11:56:03)</a> &gt; <a href="../../index.html" class="el_group">JavaExtra</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">Main</a> &gt; <span class="el_source">Session3.java</span></div><h1>Session3.java</h1><pre class="source lang-java linenums">package Main;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
+
+import Entity.Hero;
+
+<span class="nc" id="L15">public class Session3 {</span>
+
+	public static void main(String[] args) {
+		// TODO 自動生成されたメソッド・スタブ
+<span class="nc" id="L19">		ArrayList&lt;Integer&gt; points = new ArrayList&lt;Integer&gt;();</span>
+<span class="nc" id="L20">		points.add(10);</span>
+<span class="nc" id="L21">		points.add(80);</span>
+<span class="nc" id="L22">		points.add(75);</span>
+<span class="nc bnc" id="L23" title="All 2 branches missed.">		for(int i : points) {</span>
+<span class="nc" id="L24">			System.out.println(i);</span>
+		}
+
+		// イテレーター(List)
+<span class="nc" id="L28">		ArrayList&lt;String&gt; names = new ArrayList&lt;String&gt;();</span>
+<span class="nc" id="L29">		names.add(&quot;湊&quot;);</span>
+<span class="nc" id="L30">		names.add(&quot;朝香&quot;);</span>
+<span class="nc" id="L31">		names.add(&quot;菅原&quot;);</span>
+<span class="nc" id="L32">		Iterator&lt;String&gt; it = names.iterator();</span>
+<span class="nc bnc" id="L33" title="All 2 branches missed.">		while(it.hasNext()){</span>
+<span class="nc" id="L34">			String e = it.next();</span>
+<span class="nc" id="L35">			System.out.println(e);</span>
+		}
+
+<span class="nc" id="L38">		List&lt;String&gt; list1 = new ArrayList&lt;String&gt;();</span>
+<span class="nc" id="L39">		List&lt;String&gt; list2 = new LinkedList&lt;String&gt;();</span>
+<span class="nc" id="L40">		printList(list1);</span>
+<span class="nc" id="L41">		printList(list2);</span>
+
+		// Set
+<span class="nc" id="L44">		Set&lt;String&gt; colors = new HashSet&lt;String&gt;();</span>
+<span class="nc" id="L45">		colors.add(&quot;赤&quot;);</span>
+<span class="nc" id="L46">		colors.add(&quot;青&quot;);</span>
+<span class="nc" id="L47">		colors.add(&quot;黄&quot;);</span>
+<span class="nc" id="L48">		colors.add(&quot;赤&quot;);</span>
+<span class="nc" id="L49">		System.out.println(&quot;色は&quot; + colors.size() + &quot;種類&quot;);</span>
+<span class="nc bnc" id="L50" title="All 2 branches missed.">		for(String s : colors) {</span>
+<span class="nc" id="L51">			System.out.print(s + &quot;→&quot;);</span>
+		}
+<span class="nc" id="L53">		System.out.println();</span>
+
+<span class="nc" id="L55">		Set&lt;String&gt; words = new TreeSet&lt;String&gt;();</span>
+<span class="nc" id="L56">		words.add(&quot;dogs&quot;);</span>
+<span class="nc" id="L57">		words.add(&quot;cat&quot;);</span>
+<span class="nc" id="L58">		words.add(&quot;wolf&quot;);</span>
+<span class="nc" id="L59">		words.add(&quot;panda&quot;);</span>
+<span class="nc bnc" id="L60" title="All 2 branches missed.">		for(String s : words) {</span>
+<span class="nc" id="L61">			System.out.print(s + &quot;→&quot;);</span>
+		}
+<span class="nc" id="L63">		System.out.println();</span>
+
+<span class="nc" id="L65">		Map&lt;String, Integer&gt; prefs = new HashMap&lt;String, Integer&gt;();</span>
+<span class="nc" id="L66">		prefs.put(&quot;京都府&quot;, 255);</span>
+<span class="nc" id="L67">		prefs.put(&quot;東京都&quot;, 1261);</span>
+<span class="nc" id="L68">		prefs.put(&quot;熊本県&quot;, 181);</span>
+<span class="nc" id="L69">		int tokyo = prefs.get(&quot;東京都&quot;);</span>
+<span class="nc" id="L70">		System.out.println(&quot;東京都の人口は&quot; + tokyo);</span>
+<span class="nc" id="L71">		prefs.remove(&quot;京都府&quot;);</span>
+<span class="nc" id="L72">		prefs.put(&quot;熊本県&quot;, 182);</span>
+<span class="nc" id="L73">		int kumamoto = prefs.get(&quot;熊本県&quot;);</span>
+<span class="nc" id="L74">		System.out.println(&quot;熊本県の人口は&quot; + kumamoto);</span>
+
+<span class="nc bnc" id="L76" title="All 2 branches missed.">		for( String key : prefs.keySet() ) {</span>
+<span class="nc" id="L77">			int value = prefs.get(key);</span>
+<span class="nc" id="L78">			System.out.println(key + &quot;の人口は、&quot; + value);</span>
+		}
+
+<span class="nc" id="L81">		Iterator&lt;String&gt; it2 = prefs.keySet().iterator();</span>
+<span class="nc bnc" id="L82" title="All 2 branches missed.">		while(it2.hasNext()) {</span>
+<span class="nc" id="L83">			String ken = it2.next();</span>
+<span class="nc" id="L84">			int value = prefs.get(ken);</span>
+<span class="nc" id="L85">			System.out.println(ken + &quot;の人口は、&quot; + value);</span>
+		}
+
+<span class="nc" id="L88">		Hero h = new Hero();</span>
+<span class="nc" id="L89">		h.setName(&quot;ミナト&quot;);</span>
+<span class="nc" id="L90">		List&lt;Hero&gt; list = new ArrayList&lt;Hero&gt;();</span>
+<span class="nc" id="L91">		list.add(h);</span>
+<span class="nc" id="L92">		h.setName(&quot;スガワラ&quot;);</span>
+<span class="nc" id="L93">		System.out.println(list.get(0).getName());</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="nc" id="L111">	}</span>
+
+	public static void printList(List&lt;String&gt; list) {
+<span class="nc bnc" id="L114" title="All 2 branches missed.">		for(String s : list) {</span>
+<span class="nc" id="L115">			System.out.println(s);</span>
+		}
+<span class="nc" id="L117">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>AllTests (2017/12/31 11:56:03)</div></body></html>

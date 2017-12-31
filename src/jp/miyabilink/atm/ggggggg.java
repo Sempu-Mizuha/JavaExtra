@@ -13,7 +13,7 @@ package jp.miyabilink.atm;
 public class ggggggg {
 
 	/**
-	 * 
+	 *
 	 */
 	public ggggggg() {
 		// TODO 自動生成されたコンストラクター・スタブ

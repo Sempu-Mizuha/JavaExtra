@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ja"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>Launcher.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=2;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">AllTests (2017/12/31 11:56:03)</a> &gt; <a href="../../index.html" class="el_group">JavaExtra</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">Main</a> &gt; <span class="el_source">Launcher.java</span></div><h1>Launcher.java</h1><pre class="source lang-java linenums">package Main;
+
+import java.lang.reflect.Method;
+
+import Enum.Start;
+
+<span class="nc" id="L7">public class Launcher {</span>
+
+	public static void main(String[] args) {
+		// TODO 自動生成されたメソッド・スタブ
+		// 1
+<span class="nc" id="L12">		String fqcn = args[0];</span>
+<span class="nc" id="L13">		Start start = Start.valueOf(args[1]);</span>
+
+		// 2
+<span class="nc" id="L16">		long memory = (Runtime.getRuntime().totalMemory()</span>
+<span class="nc" id="L17">							- Runtime.getRuntime().freeMemory())/1024/1024;</span>
+<span class="nc" id="L18">		System.out.println(memory + &quot; MB&quot;);</span>
+
+		try {
+			// 3
+<span class="nc" id="L22">			Class&lt;?&gt; classFqcn = Class.forName(fqcn);</span>
+<span class="nc" id="L23">			Method[] classFqcnMethod = classFqcn.getMethods();</span>
+<span class="nc bnc" id="L24" title="All 2 branches missed.">			for( Method m : classFqcnMethod ) {</span>
+<span class="nc" id="L25">				System.out.println(m);</span>
+			}
+
+			// 4
+<span class="nc" id="L29">			Method main = classFqcn.getMethod(&quot;main&quot;, String[].class);</span>
+<span class="nc bnc" id="L30" title="All 3 branches missed.">			switch(start) {</span>
+			case E:
+<span class="nc" id="L32">				ProcessBuilder pb = new ProcessBuilder(&quot;java&quot;,classFqcn.getName());</span>
+<span class="nc" id="L33">				Process proc = pb.start();</span>
+<span class="nc" id="L34">				proc.waitFor(); // process終了までまつ</span>
+<span class="nc" id="L35">				break;</span>
+			case I:
+<span class="nc" id="L37">				main.invoke(null, (Object)args);</span>
+				break;
+			}
+
+			// 5
+<span class="nc" id="L42">			long memory2 = (Runtime.getRuntime().totalMemory()</span>
+<span class="nc" id="L43">					- Runtime.getRuntime().freeMemory())/1024/1024;</span>
+<span class="nc" id="L44">			System.out.println(memory2 + &quot; MB&quot;);</span>
+
+			// 6
+<span class="nc" id="L47">			System.exit(0);</span>
+
+<span class="nc" id="L49">		} catch (Exception e) {</span>
+			// TODO 自動生成された catch ブロック
+<span class="nc" id="L51">			e.printStackTrace();</span>
+<span class="nc" id="L52">			System.exit(1);</span>
+		}
+
+
+
+
+
+
+<span class="nc" id="L60">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>AllTests (2017/12/31 11:56:03)</div></body></html>

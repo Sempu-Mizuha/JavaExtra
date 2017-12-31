@@ -4,6 +4,7 @@ Interface
 Main
 dao
 dto
+info
 jp.miyabilink.atm
 junit
 test

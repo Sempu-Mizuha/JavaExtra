@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ja"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>Session2.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=2;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">AllTests (2017/12/31 11:56:03)</a> &gt; <a href="../../index.html" class="el_group">JavaExtra</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">Main</a> &gt; <span class="el_source">Session2.java</span></div><h1>Session2.java</h1><pre class="source lang-java linenums">package Main;
+
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.MonthDay;
+import java.time.Period;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+
+<span class="nc" id="L13">public class Session2 {</span>
+
+	public static void main(String[] args) {
+		// 詳細は入門で…
+<span class="nc" id="L17">		Date now = new Date();</span>
+<span class="nc" id="L18">		System.out.println(now);</span>
+<span class="nc" id="L19">		System.out.println(now.getTime());</span>
+<span class="nc" id="L20">		Date past = new Date(1316622225935L);</span>
+<span class="nc" id="L21">		System.out.println(past);</span>
+
+<span class="nc" id="L23">		System.out.println(&quot;------------------------------------&quot;);</span>
+
+		// 以降はjava8のみの機能
+		// java7以前では使えないので、使う場合は以下を利用(完全一致ではない&amp;世界標準的なものはない)
+		// http://shinsuke789.hatenablog.jp/entry/2013/08/05/120042
+		// https://qiita.com/rubytomato@github/items/a9abb4f766e905c0c227
+		// Instant
+<span class="nc" id="L30">		Instant i1 = Instant.now(); //以前のDate 現在の世界標準時間 (経過時間等を示せる)</span>
+<span class="nc" id="L31">		System.out.println(i1);</span>
+
+		// Instantとlongの相互変換
+<span class="nc" id="L34">		Instant i2 = Instant.ofEpochMilli(31920291332L);</span>
+<span class="nc" id="L35">		System.out.println(i2);</span>
+<span class="nc" id="L36">		long l = i2.toEpochMilli();</span>
+<span class="nc" id="L37">		System.out.println(l);</span>
+
+		// ZonedDateTimeの生成
+<span class="nc" id="L40">		ZonedDateTime z1 = ZonedDateTime.now(); //以前のDate&amp;Calender 現在の時間(地域指定入り)</span>
+<span class="nc" id="L41">		System.out.println(z1);</span>
+<span class="nc" id="L42">		ZonedDateTime z2</span>
+<span class="nc" id="L43">				= ZonedDateTime.of(2014, 1, 2, 3, 4, 5, 6, ZoneId.of(&quot;Asia/Tokyo&quot;));</span>
+<span class="nc" id="L44">		System.out.println(z2);</span>
+
+<span class="nc" id="L46">		System.out.println(&quot;------------------------------------&quot;);</span>
+
+		// InstantとZoneddateTimeの相互変換
+<span class="nc" id="L49">		Instant i3 = z2.toInstant();</span>
+<span class="nc" id="L50">		ZonedDateTime z3 = i3.atZone(ZoneId.of(&quot;Europe/London&quot;));</span>
+
+		// ZonedDateTimeの利用
+<span class="nc" id="L53">		System.out.println(&quot;東京：&quot; + z2.getYear() + z2.getMonth()</span>
+<span class="nc" id="L54">								+ z2.getDayOfMonth());</span>
+<span class="nc" id="L55">		System.out.println(&quot;ロンドン：&quot; + z3.getYear()+ z3.getMonth()</span>
+<span class="nc" id="L56">								+ z3.getDayOfMonth());</span>
+<span class="nc bnc" id="L57" title="All 2 branches missed.">		if(z2.isEqual(z3)) {</span>
+<span class="nc" id="L58">			System.out.println(&quot;これらは同じ時間を示しています&quot;);</span>
+		}
+
+<span class="nc" id="L61">		System.out.println(&quot;------------------------------------&quot;);</span>
+
+		// LocalDateTimeの生成方法
+<span class="nc" id="L64">		LocalDateTime l1 = LocalDateTime.now(); // 以前のDate&amp;Calender 現在の時間</span>
+<span class="nc" id="L65">		System.out.println(l1);</span>
+<span class="nc" id="L66">		LocalDateTime l2 = LocalDateTime.of(2014, 1, 1, 9, 5, 0, 0);</span>
+<span class="nc" id="L67">		System.out.println(l2);</span>
+
+		// LocalDateTimeとZonedDateTimeの相互変換
+<span class="nc" id="L70">		z1 = l2.atZone(ZoneId.of(&quot;Europe/London&quot;));</span>
+<span class="nc" id="L71">		LocalDateTime l3 = z1.toLocalDateTime();</span>
+<span class="nc" id="L72">		System.out.println(z1);</span>
+<span class="nc" id="L73">		System.out.println(l3);</span>
+
+<span class="nc" id="L75">		MonthDay md1 = MonthDay.now();</span>
+<span class="nc" id="L76">		System.out.println(md1);</span>
+
+<span class="nc" id="L78">		System.out.println(&quot;------------------------------------&quot;);</span>
+
+		// 文字列からLocalDateを生成
+<span class="nc" id="L81">		DateTimeFormatter f</span>
+<span class="nc" id="L82">			= DateTimeFormatter.ofPattern(&quot;yyyy/MM/dd&quot;); //以前のSimpleDateFormat</span>
+<span class="nc" id="L83">		LocalDate d = LocalDate.parse(&quot;2011/08/21&quot;, f);</span>
+<span class="nc" id="L84">		System.out.println(d);</span>
+
+		// 1000日後を計算する
+<span class="nc" id="L87">		d = d.plusDays(1000);</span>
+<span class="nc" id="L88">		String str = d.format(f);</span>
+<span class="nc" id="L89">		System.out.println(&quot;1000日後は&quot; + str);</span>
+
+		// 現在日付との比較
+<span class="nc" id="L92">		LocalDate nowLocalDate = LocalDate.now();</span>
+<span class="nc bnc" id="L93" title="All 2 branches missed.">		if(nowLocalDate.isAfter(d)) {</span>
+<span class="nc" id="L94">			System.out.println</span>
+<span class="nc" id="L95">				(&quot;nowLocalDate:&quot; + nowLocalDate + &quot;はd:&quot; + d + &quot;より新しい&quot;);</span>
+		}
+
+<span class="nc" id="L98">		System.out.println(&quot;------------------------------------&quot;);</span>
+
+		// 期間指定(Java7以前まではLong型しかなかった…)
+<span class="nc" id="L101">		LocalDate d1 = LocalDate.of(2012, 1, 1);</span>
+<span class="nc" id="L102">		LocalDate d2 = LocalDate.of(2012, 1, 4);</span>
+
+<span class="nc" id="L104">		System.out.println(d1.compareTo(d2));</span>
+
+		// 3日を表すPeriodを2通りの方法で生成
+		@SuppressWarnings(&quot;unused&quot;)
+<span class="nc" id="L108">		Period p1 = Period.ofDays(3);</span>
+<span class="nc" id="L109">		Period p2 = Period.between(d1, d2);</span>
+<span class="nc" id="L110">		System.out.println(p2.getDays());</span>
+
+		// d2のさらに3日後を計算する。
+<span class="nc" id="L113">		LocalDate d3 = d2.plus(p2);</span>
+<span class="nc" id="L114">		System.out.println(d3);</span>
+
+
+<span class="nc" id="L117">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>AllTests (2017/12/31 11:56:03)</div></body></html>

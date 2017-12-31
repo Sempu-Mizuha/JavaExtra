@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ja"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>RefSample.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=2;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">AllTests (2017/12/31 11:56:03)</a> &gt; <a href="../../index.html" class="el_group">JavaExtra</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">Entity</a> &gt; <span class="el_source">RefSample.java</span></div><h1>RefSample.java</h1><pre class="source lang-java linenums">package Entity;
+
+public class RefSample {
+<span class="nc" id="L4">	public int times = 0;</span>
+
+<span class="nc" id="L6">	public RefSample(int times) {</span>
+<span class="nc" id="L7">		this.times = times;</span>
+<span class="nc" id="L8">	}</span>
+
+	public void hello(String msg) {
+<span class="nc" id="L11">		this.hello(msg, this.times);</span>
+<span class="nc" id="L12">	}</span>
+
+	public void hello(String msg, int t) {
+		// TODO 自動生成されたメソッド・スタブ
+<span class="nc" id="L16">		System.out.println(&quot;Hello, &quot; + msg + &quot; x&quot; + t);</span>
+<span class="nc" id="L17">	}</span>
+
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>AllTests (2017/12/31 11:56:03)</div></body></html>

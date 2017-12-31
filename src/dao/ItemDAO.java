@@ -46,7 +46,7 @@ public class ItemDAO {
 				pstmt2.setInt(i++, price);
 				try (ResultSet rs = pstmt2.executeQuery()){
 					// 複数結果
-					while(rs.next()) {
+					while (rs.next()) {
 						Item item = new Item();
 						item.setName(rs.getString("NAME"));
 						item.setPrice(rs.getInt("PRICE"));
@@ -65,7 +65,6 @@ public class ItemDAO {
 		return list;
 
 	}
-
 
 
 

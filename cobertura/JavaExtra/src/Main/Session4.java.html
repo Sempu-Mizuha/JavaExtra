@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ja"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>Session4.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=2;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">AllTests (2017/12/31 11:56:03)</a> &gt; <a href="../../index.html" class="el_group">JavaExtra</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">Main</a> &gt; <span class="el_source">Session4.java</span></div><h1>Session4.java</h1><pre class="source lang-java linenums">package Main;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import Entity.Account;
+import Entity.Book;
+import Entity.Hero;
+import Entity.Sword;
+
+<span class="nc" id="L14">public class Session4 {</span>
+
+	public static void main(String[] args) {
+		// TODO 自動生成されたメソッド・スタブ
+<span class="nc" id="L18">		Hero a = new Hero();</span>
+<span class="nc" id="L19">		System.out.println(a);</span>
+
+		// equals()をオーバーライドしないと変なことになる
+<span class="nc" id="L22">		List&lt;Hero&gt; list = new ArrayList&lt;Hero&gt;();</span>
+<span class="nc" id="L23">		Hero h1 = new Hero();</span>
+<span class="nc" id="L24">		h1.setName(&quot;ミナト&quot;);</span>
+<span class="nc" id="L25">		list.add(h1);</span>
+<span class="nc" id="L26">		System.out.println(&quot;要素数=&quot; + list.size());</span>
+<span class="nc" id="L27">		h1 = new Hero();</span>
+<span class="nc" id="L28">		h1.setName(&quot;ミナト&quot;);</span>
+<span class="nc" id="L29">		list.remove(h1);</span>
+<span class="nc" id="L30">		System.out.println(&quot;要素数=&quot; + list.size());</span>
+
+		// hashCode()をオーバーライドしていないと変なことになる
+<span class="nc" id="L33">		Set&lt;Hero&gt; set = new HashSet&lt;Hero&gt;();</span>
+<span class="nc" id="L34">		h1 = new Hero();</span>
+<span class="nc" id="L35">		h1.setName(&quot;ミナト&quot;);</span>
+<span class="nc" id="L36">		set.add(h1);</span>
+<span class="nc" id="L37">		System.out.println(&quot;要素数=&quot; + set.size());</span>
+<span class="nc" id="L38">		h1 = new Hero();</span>
+<span class="nc" id="L39">		h1.setName(&quot;ミナト&quot;);</span>
+<span class="nc" id="L40">		set.remove(h1);</span>
+<span class="nc" id="L41">		System.out.println(&quot;要素数=&quot; + set.size());</span>
+
+		// 自然順序設定しておかないと変なことになる
+<span class="nc" id="L44">		List&lt;Account&gt; listAccount = new ArrayList&lt;Account&gt;();</span>
+<span class="nc" id="L45">		Collections.sort(listAccount);</span>
+
+		// cloneの行い方
+<span class="nc" id="L48">		Hero h11 = new Hero(&quot;ミナト&quot;);</span>
+<span class="nc" id="L49">		Sword s = new Sword(&quot;はがねの剣&quot;);</span>
+<span class="nc" id="L50">		h11.setSword(s);</span>
+<span class="nc" id="L51">		System.out.println(&quot;装備:&quot; + h11.getSword().getSword());</span>
+<span class="nc" id="L52">		System.out.println(&quot;clone()で複製します&quot;);</span>
+<span class="nc" id="L53">		Hero h12 = h11.clone();</span>
+<span class="nc" id="L54">		System.out.println(&quot;コピー元の勇者の剣の名前を変えます&quot;);</span>
+<span class="nc" id="L55">		h11.getSword().setSword(&quot;ひのきの棒&quot;);</span>
+<span class="nc" id="L56">		System.out.println(&quot;コピー元とコピー先の勇者の装備を表示します&quot;);</span>
+<span class="nc" id="L57">		System.out.println(&quot;コピー元:&quot; + h11.getSword().getSword() + &quot;/コピー先:&quot; + h12.getSword().getSword());</span>
+
+<span class="nc" id="L59">		List&lt;Hero&gt; list1 = new ArrayList&lt;Hero&gt;();</span>
+<span class="nc" id="L60">		list1.add(h11);</span>
+<span class="nc" id="L61">		System.out.println(&quot;コピー前:&quot; + list1.get(0) + list1.get(0).getSword());</span>
+		@SuppressWarnings(&quot;unchecked&quot;)
+<span class="nc" id="L63">		List&lt;Hero&gt; list2 = (ArrayList&lt;Hero&gt;) ((ArrayList&lt;Hero&gt;) list1).clone();</span>
+<span class="nc" id="L64">		list1.get(0).setName(&quot;スガワラ&quot;);</span>
+<span class="nc" id="L65">		list1.get(0).getSword().setSword(&quot;はがねの剣&quot;);</span>
+<span class="nc" id="L66">		System.out.println(&quot;コピー前:&quot; + list1.get(0) + list1.get(0).getSword());</span>
+<span class="nc" id="L67">		System.out.println(&quot;コピー後:&quot; + list2.get(0) + list2.get(0).getSword());</span>
+
+<span class="nc" id="L69">		String a1 = &quot;a&quot;;</span>
+<span class="nc" id="L70">		String a2 = a1;</span>
+<span class="nc" id="L71">		a1 = &quot;aa&quot;;</span>
+<span class="nc" id="L72">		System.out.println( a1 + &quot; &quot; + a2 );</span>
+
+<span class="nc" id="L74">		Book book1 = new Book();</span>
+<span class="nc" id="L75">		Book book2 = new Book();</span>
+<span class="nc" id="L76">		book1.setTitle(&quot;あ&quot;);</span>
+<span class="nc" id="L77">		book2.setTitle(&quot;い&quot;);</span>
+<span class="nc" id="L78">		System.out.println(book1);</span>
+<span class="nc" id="L79">		System.out.println(book2);</span>
+<span class="nc" id="L80">		System.out.println(book1.hashCode());</span>
+<span class="nc" id="L81">		System.out.println(book2.hashCode());</span>
+<span class="nc" id="L82">		System.out.println(book1.equals(book2));</span>
+<span class="nc" id="L83">		System.out.println(book1.compareTo(book2));</span>
+
+
+<span class="nc" id="L86">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>AllTests (2017/12/31 11:56:03)</div></body></html>

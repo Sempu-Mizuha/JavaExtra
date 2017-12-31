@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1" sequence="4" timestamp="1514645567998" analysisTimestamp="1514645567130" release="">
+  <Project projectName="JavaExtra">
+    <Jar>/Users/MIBOX/Desktop/workspace/JavaExtra/bin/Entity/FuncList.class</Jar>
+    <AuxClasspathEntry>/Users/MIBOX/Desktop/workspace/JavaExtra/bin</AuxClasspathEntry>
+    <AuxClasspathEntry>/Applications/Eclipse_4.7.0.app/Contents/java/8/Home/commons-lang3-3.6/commons-lang3-3.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Applications/Eclipse_4.7.0.app/Contents/java/8/Home/commons-logging-1.2/commons-logging-1.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Applications/h2/bin/h2-1.4.196.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Applications/Eclipse_4.7.0.app/Contents/Eclipse/plugins/org.junit_4.12.0.v201504281640/junit.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Applications/Eclipse_4.7.0.app/Contents/Eclipse/plugins/org.hamcrest.core_1.3.0.v201303031735.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Applications/Eclipse_4.7.0.app/Contents/java/8/Home/jre/lib/rt.jar</AuxClasspathEntry>
+    <SrcDir>/Users/MIBOX/Desktop/workspace/JavaExtra/src</SrcDir>
+    <Cloud id="edu.umd.cs.findbugs.cloud.doNothingCloud" online="false"></Cloud>
+  </Project>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" rank="18" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="Entity.Bank">
+      <SourceLine classname="Entity.Bank" sourcefile="Bank.java" sourcepath="Entity/Bank.java"/>
+    </Class>
+    <Field classname="Entity.Bank" name="address" signature="Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="Entity.Bank" start="8" end="8" startBytecode="0" endBytecode="0" sourcefile="Bank.java" sourcepath="Entity/Bank.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" rank="18" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="Entity.Bank">
+      <SourceLine classname="Entity.Bank" sourcefile="Bank.java" sourcepath="Entity/Bank.java"/>
+    </Class>
+    <Field classname="Entity.Bank" name="money" signature="I" isStatic="false">
+      <SourceLine classname="Entity.Bank" start="9" end="9" startBytecode="0" endBytecode="0" sourcefile="Bank.java" sourcepath="Entity/Bank.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" rank="18" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="Entity.Bank">
+      <SourceLine classname="Entity.Bank" sourcefile="Bank.java" sourcepath="Entity/Bank.java"/>
+    </Class>
+    <Field classname="Entity.Bank" name="name" signature="Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="Entity.Bank" start="7" end="7" startBytecode="0" endBytecode="0" sourcefile="Bank.java" sourcepath="Entity/Bank.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" first="1">
+    <Class classname="Entity.Book">
+      <SourceLine classname="Entity.Book" sourcefile="Book.java" sourcepath="Entity/Book.java"/>
+    </Class>
+    <Method classname="Entity.Book" name="getPublishDate" signature="()Ljava/util/Date;" isStatic="false">
+      <SourceLine classname="Entity.Book" start="77" end="77" startBytecode="0" endBytecode="46" sourcefile="Book.java" sourcepath="Entity/Book.java"/>
+    </Method>
+    <Field classname="Entity.Book" name="publishDate" signature="Ljava/util/Date;" isStatic="false">
+      <SourceLine classname="Entity.Book" sourcefile="Book.java" sourcepath="Entity/Book.java"/>
+    </Field>
+    <SourceLine classname="Entity.Book" start="77" end="77" startBytecode="4" endBytecode="4" sourcefile="Book.java" sourcepath="Entity/Book.java"/>
+    <SourceLine classname="Entity.Book" start="77" end="77" startBytecode="4" endBytecode="4" sourcefile="Book.java" sourcepath="Entity/Book.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" first="1">
+    <Class classname="Entity.Book">
+      <SourceLine classname="Entity.Book" sourcefile="Book.java" sourcepath="Entity/Book.java"/>
+    </Class>
+    <Method classname="Entity.Book" name="setPublishDate" signature="(Ljava/util/Date;)V" isStatic="false">
+      <SourceLine classname="Entity.Book" start="84" end="85" startBytecode="0" endBytecode="61" sourcefile="Book.java" sourcepath="Entity/Book.java"/>
+    </Method>
+    <Field classname="Entity.Book" name="publishDate" signature="Ljava/util/Date;" isStatic="false">
+      <SourceLine classname="Entity.Book" sourcefile="Book.java" sourcepath="Entity/Book.java"/>
+    </Field>
+    <LocalVariable name="publishDate" register="1" pc="2" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="Entity.Book" start="84" end="84" startBytecode="2" endBytecode="2" sourcefile="Book.java" sourcepath="Entity/Book.java"/>
+    <SourceLine classname="Entity.Book" start="84" end="84" startBytecode="2" endBytecode="2" sourcefile="Book.java" sourcepath="Entity/Book.java"/>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" rank="18" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="Entity.Character">
+      <SourceLine classname="Entity.Character" sourcefile="Character.java" sourcepath="Entity/Character.java"/>
+    </Class>
+    <Field classname="Entity.Character" name="name" signature="Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="Entity.Character" start="5" end="5" startBytecode="0" endBytecode="0" sourcefile="Character.java" sourcepath="Entity/Character.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="IM_BAD_CHECK_FOR_ODD" priority="2" rank="13" abbrev="IM" category="STYLE" first="1">
+    <Class classname="Entity.FuncList">
+      <SourceLine classname="Entity.FuncList" sourcefile="FuncList.java" sourcepath="Entity/FuncList.java"/>
+    </Class>
+    <Method classname="Entity.FuncList" name="isOdd" signature="(I)Z" isStatic="true">
+      <SourceLine classname="Entity.FuncList" start="4" end="4" startBytecode="0" endBytecode="61" sourcefile="FuncList.java" sourcepath="Entity/FuncList.java"/>
+    </Method>
+    <SourceLine classname="Entity.FuncList" start="4" end="4" startBytecode="4" endBytecode="4" sourcefile="FuncList.java" sourcepath="Entity/FuncList.java"/>
+    <SourceLine classname="Entity.FuncList" start="4" end="4" startBytecode="4" endBytecode="4" sourcefile="FuncList.java" sourcepath="Entity/FuncList.java"/>
+  </BugInstance>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="1" rank="15" abbrev="DLS" category="STYLE" first="1">
+    <Class classname="Entity.Outer">
+      <SourceLine classname="Entity.Outer" sourcefile="Outer.java" sourcepath="Entity/Outer.java"/>
+    </Class>
+    <Method classname="Entity.Outer" name="outerMethod" signature="()V" isStatic="false">
+      <SourceLine classname="Entity.Outer" start="25" end="38" startBytecode="0" endBytecode="13" sourcefile="Outer.java" sourcepath="Entity/Outer.java"/>
+    </Method>
+    <LocalVariable name="ic" register="1" pc="8" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="Entity.Outer" start="25" end="25" startBytecode="7" endBytecode="7" sourcefile="Outer.java" sourcepath="Entity/Outer.java"/>
+    <SourceLine classname="Entity.Outer" start="25" end="25" startBytecode="7" endBytecode="7" sourcefile="Outer.java" sourcepath="Entity/Outer.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.DEAD_OBJECT_STORE" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="ic"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.METHOD_RESULT" value="true"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="Entity.Outer">
+      <SourceLine classname="Entity.Outer" sourcefile="Outer.java" sourcepath="Entity/Outer.java"/>
+    </Class>
+    <Field classname="Entity.Outer" name="outerField" signature="I" isStatic="false">
+      <SourceLine classname="Entity.Outer" sourcefile="Outer.java" sourcepath="Entity/Outer.java"/>
+    </Field>
+    <SourceLine classname="Entity.Outer$Inner2" start="19" end="19" startBytecode="6" endBytecode="6" sourcefile="Outer.java" sourcepath="Entity/Outer.java"/>
+  </BugInstance>
+  <BugInstance type="CN_IDIOM_NO_SUPER_CALL" priority="2" rank="16" abbrev="CN" category="BAD_PRACTICE" first="1">
+    <Class classname="Entity.Sword">
+      <SourceLine classname="Entity.Sword" sourcefile="Sword.java" sourcepath="Entity/Sword.java"/>
+    </Class>
+    <Method classname="Entity.Sword" name="clone" signature="()LEntity/Sword;" isStatic="false">
+      <SourceLine classname="Entity.Sword" start="49" end="51" startBytecode="0" endBytecode="77" sourcefile="Sword.java" sourcepath="Entity/Sword.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="SBSC_USE_STRINGBUFFER_CONCATENATION" priority="2" rank="18" abbrev="SBSC" category="PERFORMANCE" first="1">
+    <Class classname="Main.Main">
+      <SourceLine classname="Main.Main" sourcefile="Main.java" sourcepath="Main/Main.java"/>
+    </Class>
+    <Method classname="Main.Main" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="Main.Main" start="20" end="111" startBytecode="0" endBytecode="1323" sourcefile="Main.java" sourcepath="Main/Main.java"/>
+    </Method>
+    <SourceLine classname="Main.Main" start="70" end="70" startBytecode="306" endBytecode="306" sourcefile="Main.java" sourcepath="Main/Main.java"/>
+  </BugInstance>
+  <BugInstance type="VA_FORMAT_STRING_USES_NEWLINE" priority="2" rank="20" abbrev="FS" category="BAD_PRACTICE" first="1">
+    <Class classname="Main.Main">
+      <SourceLine classname="Main.Main" sourcefile="Main.java" sourcepath="Main/Main.java"/>
+    </Class>
+    <Method classname="Main.Main" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="Main.Main" start="20" end="111" startBytecode="0" endBytecode="1323" sourcefile="Main.java" sourcepath="Main/Main.java"/>
+    </Method>
+    <Method classname="java.io.PrintStream" name="printf" signature="(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.PrintStream" start="871" end="871" startBytecode="0" endBytecode="30" sourcefile="PrintStream.java" sourcepath="java/io/PrintStream.java"/>
+    </Method>
+    <String value="%-8s  %-6s  &#25152;&#25345;&#37329;%,5d\n" role="STRING_FORMAT_STRING"/>
+    <SourceLine classname="Main.Main" start="106" end="106" startBytecode="705" endBytecode="705" sourcefile="Main.java" sourcepath="Main/Main.java"/>
+  </BugInstance>
+  <BugInstance type="VA_FORMAT_STRING_USES_NEWLINE" priority="2" rank="20" abbrev="FS" category="BAD_PRACTICE" first="1">
+    <Class classname="Main.Main">
+      <SourceLine classname="Main.Main" sourcefile="Main.java" sourcepath="Main/Main.java"/>
+    </Class>
+    <Method classname="Main.Main" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="Main.Main" start="20" end="111" startBytecode="0" endBytecode="1323" sourcefile="Main.java" sourcepath="Main/Main.java"/>
+    </Method>
+    <Method classname="java.io.PrintStream" name="printf" signature="(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.PrintStream" start="871" end="871" startBytecode="0" endBytecode="30" sourcefile="PrintStream.java" sourcepath="java/io/PrintStream.java"/>
+    </Method>
+    <String value="&#35069;&#21697;&#30058;&#21495;%s-%02d\n" role="STRING_FORMAT_STRING"/>
+    <SourceLine classname="Main.Main" start="107" end="107" startBytecode="730" endBytecode="730" sourcefile="Main.java" sourcepath="Main/Main.java"/>
+  </BugInstance>
+  <BugInstance type="VA_FORMAT_STRING_USES_NEWLINE" priority="2" rank="20" abbrev="FS" category="BAD_PRACTICE" first="1">
+    <Class classname="Main.Main">
+      <SourceLine classname="Main.Main" sourcefile="Main.java" sourcepath="Main/Main.java"/>
+    </Class>
+    <Method classname="Main.Main" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="Main.Main" start="20" end="111" startBytecode="0" endBytecode="1323" sourcefile="Main.java" sourcepath="Main/Main.java"/>
+    </Method>
+    <Method classname="java.lang.String" name="format" signature="(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;" isStatic="true" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.String" start="2940" end="2940" startBytecode="0" endBytecode="39" sourcefile="String.java" sourcepath="java/lang/String.java"/>
+    </Method>
+    <String value="%-8s  %-6s  &#25152;&#25345;&#37329;%,5d\n" role="STRING_FORMAT_STRING"/>
+    <SourceLine classname="Main.Main" start="104" end="104" startBytecode="656" endBytecode="656" sourcefile="Main.java" sourcepath="Main/Main.java"/>
+  </BugInstance>
+  <BugInstance type="UC_USELESS_VOID_METHOD" priority="1" rank="15" abbrev="UC" category="STYLE" first="1">
+    <Class classname="Main.MemoryEater">
+      <SourceLine classname="Main.MemoryEater" sourcefile="MemoryEater.java" sourcepath="Main/MemoryEater.java"/>
+    </Class>
+    <Method classname="Main.MemoryEater" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="Main.MemoryEater" start="7" end="15" startBytecode="0" endBytecode="172" sourcefile="MemoryEater.java" sourcepath="Main/MemoryEater.java"/>
+    </Method>
+    <SourceLine classname="Main.MemoryEater" start="15" end="15" startBytecode="46" endBytecode="46" sourcefile="MemoryEater.java" sourcepath="Main/MemoryEater.java"/>
+    <SourceLine classname="Main.MemoryEater" start="15" end="15" startBytecode="46" endBytecode="46" sourcefile="MemoryEater.java" sourcepath="Main/MemoryEater.java"/>
+  </BugInstance>
+  <BugInstance type="WMI_WRONG_MAP_ITERATOR" priority="2" rank="18" abbrev="WMI" category="PERFORMANCE" first="1">
+    <Class classname="Main.Pra3">
+      <SourceLine classname="Main.Pra3" sourcefile="Pra3.java" sourcepath="Main/Pra3.java"/>
+    </Class>
+    <Method classname="Main.Pra3" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="Main.Pra3" start="15" end="39" startBytecode="0" endBytecode="487" sourcefile="Pra3.java" sourcepath="Main/Pra3.java"/>
+    </Method>
+    <SourceLine classname="Main.Pra3" start="35" end="35" startBytecode="180" endBytecode="180" sourcefile="Pra3.java" sourcepath="Main/Pra3.java"/>
+    <SourceLine classname="Main.Pra3" start="35" end="35" startBytecode="180" endBytecode="180" sourcefile="Pra3.java" sourcepath="Main/Pra3.java"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N" first="1">
+    <Class classname="Main.Session11">
+      <SourceLine classname="Main.Session11" sourcefile="Session11.java" sourcepath="Main/Session11.java"/>
+    </Class>
+    <Method classname="Main.Session11" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="Main.Session11" start="18" end="110" startBytecode="0" endBytecode="1647" sourcefile="Session11.java" sourcepath="Main/Session11.java"/>
+    </Method>
+    <Method classname="java.io.InputStreamReader" name="&lt;init&gt;" signature="(Ljava/io/InputStream;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.InputStreamReader" start="72" end="79" startBytecode="0" endBytecode="108" sourcefile="InputStreamReader.java" sourcepath="java/io/InputStreamReader.java"/>
+    </Method>
+    <SourceLine classname="Main.Session11" start="22" end="22" startBytecode="22" endBytecode="22" sourcefile="Session11.java" sourcepath="Main/Session11.java"/>
+    <SourceLine classname="Main.Session11" start="22" end="22" startBytecode="22" endBytecode="22" sourcefile="Session11.java" sourcepath="Main/Session11.java"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N" first="1">
+    <Class classname="Main.Session11">
+      <SourceLine classname="Main.Session11" sourcefile="Session11.java" sourcepath="Main/Session11.java"/>
+    </Class>
+    <Method classname="Main.Session11" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="Main.Session11" start="18" end="110" startBytecode="0" endBytecode="1647" sourcefile="Session11.java" sourcepath="Main/Session11.java"/>
+    </Method>
+    <Method classname="java.lang.String" name="getBytes" signature="()[B" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.String" start="958" end="958" startBytecode="0" endBytecode="37" sourcefile="String.java" sourcepath="java/lang/String.java"/>
+    </Method>
+    <SourceLine classname="Main.Session11" start="54" end="54" startBytecode="193" endBytecode="193" sourcefile="Session11.java" sourcepath="Main/Session11.java"/>
+    <SourceLine classname="Main.Session11" start="54" end="54" startBytecode="193" endBytecode="193" sourcefile="Session11.java" sourcepath="Main/Session11.java"/>
+  </BugInstance>
+  <BugInstance type="DMI_EMPTY_DB_PASSWORD" priority="2" rank="7" abbrev="Dm" category="SECURITY" first="1">
+    <Class classname="Main.Session12">
+      <SourceLine classname="Main.Session12" sourcefile="Session12.java" sourcepath="Main/Session12.java"/>
+    </Class>
+    <Method classname="Main.Session12" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="Main.Session12" start="40" end="152" startBytecode="0" endBytecode="353" sourcefile="Session12.java" sourcepath="Main/Session12.java"/>
+    </Method>
+    <SourceLine classname="Main.Session12" start="44" end="44" startBytecode="11" endBytecode="11" sourcefile="Session12.java" sourcepath="Main/Session12.java"/>
+    <SourceLine classname="Main.Session12" start="44" end="44" startBytecode="11" endBytecode="11" sourcefile="Session12.java" sourcepath="Main/Session12.java"/>
+  </BugInstance>
+  <BugInstance type="VA_FORMAT_STRING_USES_NEWLINE" priority="2" rank="20" abbrev="FS" category="BAD_PRACTICE" first="1">
+    <Class classname="Main.Session12">
+      <SourceLine classname="Main.Session12" sourcefile="Session12.java" sourcepath="Main/Session12.java"/>
+    </Class>
+    <Method classname="Main.Session12" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="Main.Session12" start="40" end="152" startBytecode="0" endBytecode="1855" sourcefile="Session12.java" sourcepath="Main/Session12.java"/>
+    </Method>
+    <Method classname="java.io.PrintStream" name="printf" signature="(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.PrintStream" start="871" end="871" startBytecode="0" endBytecode="30" sourcefile="PrintStream.java" sourcepath="java/io/PrintStream.java"/>
+    </Method>
+    <String value="%10s%4d%4d\n" role="STRING_FORMAT_STRING"/>
+    <SourceLine classname="Main.Session12" start="144" end="144" startBytecode="804" endBytecode="804" sourcefile="Session12.java" sourcepath="Main/Session12.java"/>
+  </BugInstance>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="2" rank="17" abbrev="DLS" category="STYLE" first="1">
+    <Class classname="Main.Session2">
+      <SourceLine classname="Main.Session2" sourcefile="Session2.java" sourcepath="Main/Session2.java"/>
+    </Class>
+    <Method classname="Main.Session2" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="Main.Session2" start="17" end="117" startBytecode="0" endBytecode="234" sourcefile="Session2.java" sourcepath="Main/Session2.java"/>
+    </Method>
+    <LocalVariable name="p1" register="21" pc="529" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="Main.Session2" start="108" end="108" startBytecode="527" endBytecode="527" sourcefile="Session2.java" sourcepath="Main/Session2.java"/>
+    <SourceLine classname="Main.Session2" start="108" end="108" startBytecode="527" endBytecode="527" sourcefile="Session2.java" sourcepath="Main/Session2.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="p1"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.METHOD_RESULT" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.NO_LOADS" value="true"/>
+  </BugInstance>
+  <BugInstance type="WMI_WRONG_MAP_ITERATOR" priority="2" rank="18" abbrev="WMI" category="PERFORMANCE" first="1">
+    <Class classname="Main.Session3">
+      <SourceLine classname="Main.Session3" sourcefile="Session3.java" sourcepath="Main/Session3.java"/>
+    </Class>
+    <Method classname="Main.Session3" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="Main.Session3" start="19" end="111" startBytecode="0" endBytecode="1646" sourcefile="Session3.java" sourcepath="Main/Session3.java"/>
+    </Method>
+    <SourceLine classname="Main.Session3" start="77" end="77" startBytecode="627" endBytecode="627" sourcefile="Session3.java" sourcepath="Main/Session3.java"/>
+    <SourceLine classname="Main.Session3" start="77" end="77" startBytecode="627" endBytecode="627" sourcefile="Session3.java" sourcepath="Main/Session3.java"/>
+  </BugInstance>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="1" rank="15" abbrev="DLS" category="STYLE" first="1">
+    <Class classname="Main.Session5">
+      <SourceLine classname="Main.Session5" sourcefile="Session5.java" sourcepath="Main/Session5.java"/>
+    </Class>
+    <Method classname="Main.Session5" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="Main.Session5" start="10" end="38" startBytecode="0" endBytecode="42" sourcefile="Session5.java" sourcepath="Main/Session5.java"/>
+    </Method>
+    <LocalVariable name="ic" register="3" pc="37" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="Main.Session5" start="17" end="17" startBytecode="36" endBytecode="36" sourcefile="Session5.java" sourcepath="Main/Session5.java"/>
+    <SourceLine classname="Main.Session5" start="17" end="17" startBytecode="36" endBytecode="36" sourcefile="Session5.java" sourcepath="Main/Session5.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.DEAD_OBJECT_STORE" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="ic"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.METHOD_RESULT" value="true"/>
+  </BugInstance>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="1" rank="15" abbrev="DLS" category="STYLE" first="1">
+    <Class classname="Main.Session5">
+      <SourceLine classname="Main.Session5" sourcefile="Session5.java" sourcepath="Main/Session5.java"/>
+    </Class>
+    <Method classname="Main.Session5" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="Main.Session5" start="10" end="38" startBytecode="0" endBytecode="42" sourcefile="Session5.java" sourcepath="Main/Session5.java"/>
+    </Method>
+    <LocalVariable name="ic2" register="5" pc="62" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="Main.Session5" start="22" end="22" startBytecode="60" endBytecode="60" sourcefile="Session5.java" sourcepath="Main/Session5.java"/>
+    <SourceLine classname="Main.Session5" start="22" end="22" startBytecode="60" endBytecode="60" sourcefile="Session5.java" sourcepath="Main/Session5.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.DEAD_OBJECT_STORE" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="ic2"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.METHOD_RESULT" value="true"/>
+  </BugInstance>
+  <BugInstance type="UC_USELESS_OBJECT" priority="2" rank="17" abbrev="UC" category="STYLE" first="1">
+    <Class classname="Main.Session5">
+      <SourceLine classname="Main.Session5" sourcefile="Session5.java" sourcepath="Main/Session5.java"/>
+    </Class>
+    <Method classname="Main.Session5" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="Main.Session5" start="10" end="38" startBytecode="0" endBytecode="261" sourcefile="Session5.java" sourcepath="Main/Session5.java"/>
+    </Method>
+    <String value="poket"/>
+    <Type descriptor="LEntity/Poket;">
+      <SourceLine classname="Entity.Poket" start="3" end="18" sourcefile="Poket.java" sourcepath="Entity/Poket.java"/>
+    </Type>
+    <SourceLine classname="Main.Session5" start="24" end="24" startBytecode="66" endBytecode="66" sourcefile="Session5.java" sourcepath="Main/Session5.java"/>
+  </BugInstance>
+  <BugInstance type="UMAC_UNCALLABLE_METHOD_OF_ANONYMOUS_CLASS" priority="2" rank="7" abbrev="UMAC" category="CORRECTNESS" first="1">
+    <Class classname="Main.Session5$1">
+      <SourceLine classname="Main.Session5$1" sourcefile="Session5.java" sourcepath="Main/Session5.java"/>
+    </Class>
+    <Method classname="Main.Session5$1" name="innerField" signature="()V" isStatic="false">
+      <SourceLine classname="Main.Session5$1" start="32" end="32" startBytecode="0" endBytecode="42" sourcefile="Session5.java" sourcepath="Main/Session5.java"/>
+    </Method>
+    <Class classname="java.lang.Object" role="CLASS_SUPERCLASS">
+      <SourceLine classname="java.lang.Object" sourcefile="Object.java" sourcepath="java/lang/Object.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" rank="18" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="Main.Session5$1">
+      <SourceLine classname="Main.Session5$1" sourcefile="Session5.java" sourcepath="Main/Session5.java"/>
+    </Class>
+    <Field classname="Main.Session5$1" name="innerField" signature="Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="Main.Session5$1" sourcefile="Session5.java" sourcepath="Main/Session5.java"/>
+    </Field>
+    <SourceLine classname="Main.Session5$1" start="27" end="27" startBytecode="0" endBytecode="0" sourcefile="Session5.java" sourcepath="Main/Session5.java"/>
+  </BugInstance>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="2" rank="17" abbrev="DLS" category="STYLE" first="1">
+    <Class classname="Main.Session6">
+      <SourceLine classname="Main.Session6" sourcefile="Session6.java" sourcepath="Main/Session6.java"/>
+    </Class>
+    <Method classname="Main.Session6" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="Main.Session6" start="22" end="83" startBytecode="0" endBytecode="135" sourcefile="Session6.java" sourcepath="Main/Session6.java"/>
+    </Method>
+    <LocalVariable name="biFunction" register="8" pc="104" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="Main.Session6" start="45" end="45" startBytecode="102" endBytecode="102" sourcefile="Session6.java" sourcepath="Main/Session6.java"/>
+    <SourceLine classname="Main.Session6" start="45" end="45" startBytecode="102" endBytecode="102" sourcefile="Session6.java" sourcepath="Main/Session6.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="biFunction"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.NO_LOADS" value="true"/>
+  </BugInstance>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="2" rank="17" abbrev="DLS" category="STYLE" first="1">
+    <Class classname="Main.Session6">
+      <SourceLine classname="Main.Session6" sourcefile="Session6.java" sourcepath="Main/Session6.java"/>
+    </Class>
+    <Method classname="Main.Session6" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="Main.Session6" start="22" end="83" startBytecode="0" endBytecode="135" sourcefile="Session6.java" sourcepath="Main/Session6.java"/>
+    </Method>
+    <LocalVariable name="func3" register="9" pc="111" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="Main.Session6" start="51" end="51" startBytecode="109" endBytecode="109" sourcefile="Session6.java" sourcepath="Main/Session6.java"/>
+    <SourceLine classname="Main.Session6" start="51" end="51" startBytecode="109" endBytecode="109" sourcefile="Session6.java" sourcepath="Main/Session6.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="func3"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.NO_LOADS" value="true"/>
+  </BugInstance>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="2" rank="17" abbrev="DLS" category="STYLE" first="1">
+    <Class classname="Main.Session6">
+      <SourceLine classname="Main.Session6" sourcefile="Session6.java" sourcepath="Main/Session6.java"/>
+    </Class>
+    <Method classname="Main.Session6" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="Main.Session6" start="22" end="83" startBytecode="0" endBytecode="135" sourcefile="Session6.java" sourcepath="Main/Session6.java"/>
+    </Method>
+    <LocalVariable name="func4" register="12" pc="125" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="Main.Session6" start="53" end="53" startBytecode="123" endBytecode="123" sourcefile="Session6.java" sourcepath="Main/Session6.java"/>
+    <SourceLine classname="Main.Session6" start="53" end="53" startBytecode="123" endBytecode="123" sourcefile="Session6.java" sourcepath="Main/Session6.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="func4"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.NO_LOADS" value="true"/>
+  </BugInstance>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="2" rank="17" abbrev="DLS" category="STYLE" first="1">
+    <Class classname="Main.Session6">
+      <SourceLine classname="Main.Session6" sourcefile="Session6.java" sourcepath="Main/Session6.java"/>
+    </Class>
+    <Method classname="Main.Session6" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="Main.Session6" start="22" end="83" startBytecode="0" endBytecode="135" sourcefile="Session6.java" sourcepath="Main/Session6.java"/>
+    </Method>
+    <LocalVariable name="function" register="5" pc="83" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="Main.Session6" start="36" end="36" startBytecode="81" endBytecode="81" sourcefile="Session6.java" sourcepath="Main/Session6.java"/>
+    <SourceLine classname="Main.Session6" start="36" end="36" startBytecode="81" endBytecode="81" sourcefile="Session6.java" sourcepath="Main/Session6.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="function"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.NO_LOADS" value="true"/>
+  </BugInstance>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="2" rank="17" abbrev="DLS" category="STYLE" first="1">
+    <Class classname="Main.Session6">
+      <SourceLine classname="Main.Session6" sourcefile="Session6.java" sourcepath="Main/Session6.java"/>
+    </Class>
+    <Method classname="Main.Session6" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="Main.Session6" start="22" end="83" startBytecode="0" endBytecode="135" sourcefile="Session6.java" sourcepath="Main/Session6.java"/>
+    </Method>
+    <LocalVariable name="function2" register="7" pc="97" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="Main.Session6" start="40" end="40" startBytecode="95" endBytecode="95" sourcefile="Session6.java" sourcepath="Main/Session6.java"/>
+    <SourceLine classname="Main.Session6" start="40" end="40" startBytecode="95" endBytecode="95" sourcefile="Session6.java" sourcepath="Main/Session6.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="function2"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.NO_LOADS" value="true"/>
+  </BugInstance>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="2" rank="17" abbrev="DLS" category="STYLE" first="1">
+    <Class classname="Main.Session6">
+      <SourceLine classname="Main.Session6" sourcefile="Session6.java" sourcepath="Main/Session6.java"/>
+    </Class>
+    <Method classname="Main.Session6" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="Main.Session6" start="22" end="83" startBytecode="0" endBytecode="135" sourcefile="Session6.java" sourcepath="Main/Session6.java"/>
+    </Method>
+    <LocalVariable name="j" register="17" pc="347" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="Main.Session6" start="76" end="76" startBytecode="345" endBytecode="345" sourcefile="Session6.java" sourcepath="Main/Session6.java"/>
+    <SourceLine classname="Main.Session6" start="76" end="76" startBytecode="345" endBytecode="345" sourcefile="Session6.java" sourcepath="Main/Session6.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="j"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.METHOD_RESULT" value="true"/>
+  </BugInstance>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="2" rank="17" abbrev="DLS" category="STYLE" first="1">
+    <Class classname="Main.Session6">
+      <SourceLine classname="Main.Session6" sourcefile="Session6.java" sourcepath="Main/Session6.java"/>
+    </Class>
+    <Method classname="Main.Session6" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="Main.Session6" start="22" end="83" startBytecode="0" endBytecode="135" sourcefile="Session6.java" sourcepath="Main/Session6.java"/>
+    </Method>
+    <LocalVariable name="supplier" register="6" pc="90" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="Main.Session6" start="38" end="38" startBytecode="88" endBytecode="88" sourcefile="Session6.java" sourcepath="Main/Session6.java"/>
+    <SourceLine classname="Main.Session6" start="38" end="38" startBytecode="88" endBytecode="88" sourcefile="Session6.java" sourcepath="Main/Session6.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="supplier"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.NO_LOADS" value="true"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N" first="1">
+    <Class classname="Main.Session9">
+      <SourceLine classname="Main.Session9" sourcefile="Session9.java" sourcepath="Main/Session9.java"/>
+    </Class>
+    <Method classname="Main.Session9" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="Main.Session9" start="25" end="198" startBytecode="0" endBytecode="2842" sourcefile="Session9.java" sourcepath="Main/Session9.java"/>
+    </Method>
+    <Method classname="java.io.FileReader" name="&lt;init&gt;" signature="(Ljava/lang/String;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.FileReader" start="58" end="59" startBytecode="0" endBytecode="40" sourcefile="FileReader.java" sourcepath="java/io/FileReader.java"/>
+    </Method>
+    <SourceLine classname="Main.Session9" start="56" end="56" startBytecode="114" endBytecode="114" sourcefile="Session9.java" sourcepath="Main/Session9.java"/>
+    <SourceLine classname="Main.Session9" start="56" end="56" startBytecode="114" endBytecode="114" sourcefile="Session9.java" sourcepath="Main/Session9.java"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N" first="1">
+    <Class classname="Main.Session9">
+      <SourceLine classname="Main.Session9" sourcefile="Session9.java" sourcepath="Main/Session9.java"/>
+    </Class>
+    <Method classname="Main.Session9" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="Main.Session9" start="25" end="198" startBytecode="0" endBytecode="2842" sourcefile="Session9.java" sourcepath="Main/Session9.java"/>
+    </Method>
+    <Method classname="java.io.FileWriter" name="&lt;init&gt;" signature="(Ljava/lang/String;Z)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.FileWriter" start="78" end="79" startBytecode="0" endBytecode="41" sourcefile="FileWriter.java" sourcepath="java/io/FileWriter.java"/>
+    </Method>
+    <SourceLine classname="Main.Session9" start="32" end="32" startBytecode="14" endBytecode="14" sourcefile="Session9.java" sourcepath="Main/Session9.java"/>
+    <SourceLine classname="Main.Session9" start="32" end="32" startBytecode="14" endBytecode="14" sourcefile="Session9.java" sourcepath="Main/Session9.java"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N" first="1">
+    <Class classname="Main.Session9">
+      <SourceLine classname="Main.Session9" sourcefile="Session9.java" sourcepath="Main/Session9.java"/>
+    </Class>
+    <Method classname="Main.Session9" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="Main.Session9" start="25" end="198" startBytecode="0" endBytecode="2842" sourcefile="Session9.java" sourcepath="Main/Session9.java"/>
+    </Method>
+    <Method classname="java.io.OutputStreamWriter" name="&lt;init&gt;" signature="(Ljava/io/OutputStream;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.OutputStreamWriter" start="109" end="115" startBytecode="0" endBytecode="108" sourcefile="OutputStreamWriter.java" sourcepath="java/io/OutputStreamWriter.java"/>
+    </Method>
+    <SourceLine classname="Main.Session9" start="164" end="164" startBytecode="639" endBytecode="639" sourcefile="Session9.java" sourcepath="Main/Session9.java"/>
+    <SourceLine classname="Main.Session9" start="164" end="164" startBytecode="639" endBytecode="639" sourcefile="Session9.java" sourcepath="Main/Session9.java"/>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" first="1">
+    <Class classname="Main.pra1">
+      <SourceLine classname="Main.pra1" start="3" end="28" sourcefile="pra1.java" sourcepath="Main/pra1.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="2" rank="17" abbrev="DLS" category="STYLE" first="1">
+    <Class classname="dao.ItemDAO">
+      <SourceLine classname="dao.ItemDAO" sourcefile="ItemDAO.java" sourcepath="dao/ItemDAO.java"/>
+    </Class>
+    <Method classname="dao.ItemDAO" name="findByMinimumPrice" signature="(I)Ljava/util/List;" isStatic="false">
+      <SourceLine classname="dao.ItemDAO" start="33" end="65" startBytecode="0" endBytecode="163" sourcefile="ItemDAO.java" sourcepath="dao/ItemDAO.java"/>
+    </Method>
+    <LocalVariable name="i" register="10" pc="88" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="dao.ItemDAO" start="46" end="46" startBytecode="85" endBytecode="85" sourcefile="ItemDAO.java" sourcepath="dao/ItemDAO.java"/>
+    <SourceLine classname="dao.ItemDAO" start="46" end="46" startBytecode="85" endBytecode="85" sourcefile="ItemDAO.java" sourcepath="dao/ItemDAO.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.BASE_VALUE" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.COPY_VALUE" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.DEAD_INCREMENT" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="i"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.SINGLE_DEAD_INCREMENT" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.TWO_STORES_MULTIPLE_LOADS" value="true"/>
+  </BugInstance>
+  <BugInstance type="DMI_EMPTY_DB_PASSWORD" priority="2" rank="7" abbrev="Dm" category="SECURITY" first="1">
+    <Class classname="dao.ItemDAO">
+      <SourceLine classname="dao.ItemDAO" sourcefile="ItemDAO.java" sourcepath="dao/ItemDAO.java"/>
+    </Class>
+    <Method classname="dao.ItemDAO" name="findByMinimumPrice" signature="(I)Ljava/util/List;" isStatic="false">
+      <SourceLine classname="dao.ItemDAO" start="33" end="65" startBytecode="0" endBytecode="163" sourcefile="ItemDAO.java" sourcepath="dao/ItemDAO.java"/>
+    </Method>
+    <SourceLine classname="dao.ItemDAO" start="36" end="36" startBytecode="20" endBytecode="20" sourcefile="ItemDAO.java" sourcepath="dao/ItemDAO.java"/>
+    <SourceLine classname="dao.ItemDAO" start="36" end="36" startBytecode="20" endBytecode="20" sourcefile="ItemDAO.java" sourcepath="dao/ItemDAO.java"/>
+  </BugInstance>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="1" rank="15" abbrev="DLS" category="STYLE" first="1">
+    <Class classname="jp.miyabilink.atm.Bank">
+      <SourceLine classname="jp.miyabilink.atm.Bank" sourcefile="Bank.java" sourcepath="jp/miyabilink/atm/Bank.java"/>
+    </Class>
+    <Method classname="jp.miyabilink.atm.Bank" name="addAccount" signature="(Ljava/lang/String;I)V" isStatic="false">
+      <SourceLine classname="jp.miyabilink.atm.Bank" start="164" end="166" startBytecode="0" endBytecode="5" sourcefile="Bank.java" sourcepath="jp/miyabilink/atm/Bank.java"/>
+    </Method>
+    <LocalVariable name="fw" register="3" pc="10" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="jp.miyabilink.atm.Bank" start="164" end="164" startBytecode="9" endBytecode="9" sourcefile="Bank.java" sourcepath="jp/miyabilink/atm/Bank.java"/>
+    <SourceLine classname="jp.miyabilink.atm.Bank" start="164" end="164" startBytecode="9" endBytecode="9" sourcefile="Bank.java" sourcepath="jp/miyabilink/atm/Bank.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.DEAD_OBJECT_STORE" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="fw"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.METHOD_RESULT" value="true"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N" first="1">
+    <Class classname="jp.miyabilink.atm.Bank">
+      <SourceLine classname="jp.miyabilink.atm.Bank" sourcefile="Bank.java" sourcepath="jp/miyabilink/atm/Bank.java"/>
+    </Class>
+    <Method classname="jp.miyabilink.atm.Bank" name="addAccount" signature="(Ljava/lang/String;I)V" isStatic="false">
+      <SourceLine classname="jp.miyabilink.atm.Bank" start="164" end="166" startBytecode="0" endBytecode="86" sourcefile="Bank.java" sourcepath="jp/miyabilink/atm/Bank.java"/>
+    </Method>
+    <Method classname="java.io.FileWriter" name="&lt;init&gt;" signature="(Ljava/lang/String;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.FileWriter" start="63" end="64" startBytecode="0" endBytecode="40" sourcefile="FileWriter.java" sourcepath="java/io/FileWriter.java"/>
+    </Method>
+    <SourceLine classname="jp.miyabilink.atm.Bank" start="164" end="164" startBytecode="6" endBytecode="6" sourcefile="Bank.java" sourcepath="jp/miyabilink/atm/Bank.java"/>
+    <SourceLine classname="jp.miyabilink.atm.Bank" start="164" end="164" startBytecode="6" endBytecode="6" sourcefile="Bank.java" sourcepath="jp/miyabilink/atm/Bank.java"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N" first="1">
+    <Class classname="jp.miyabilink.atm.Bank">
+      <SourceLine classname="jp.miyabilink.atm.Bank" sourcefile="Bank.java" sourcepath="jp/miyabilink/atm/Bank.java"/>
+    </Class>
+    <Method classname="jp.miyabilink.atm.Bank" name="getBytes" signature="()[B" isStatic="false">
+      <SourceLine classname="jp.miyabilink.atm.Bank" start="126" end="126" startBytecode="0" endBytecode="49" sourcefile="Bank.java" sourcepath="jp/miyabilink/atm/Bank.java"/>
+    </Method>
+    <Method classname="java.lang.String" name="getBytes" signature="()[B" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.String" start="958" end="958" startBytecode="0" endBytecode="37" sourcefile="String.java" sourcepath="java/lang/String.java"/>
+    </Method>
+    <SourceLine classname="jp.miyabilink.atm.Bank" start="126" end="126" startBytecode="4" endBytecode="4" sourcefile="Bank.java" sourcepath="jp/miyabilink/atm/Bank.java"/>
+    <SourceLine classname="jp.miyabilink.atm.Bank" start="126" end="126" startBytecode="4" endBytecode="4" sourcefile="Bank.java" sourcepath="jp/miyabilink/atm/Bank.java"/>
+  </BugInstance>
+  <BugInstance type="OBL_UNSATISFIED_OBLIGATION" priority="2" rank="20" abbrev="OBL" category="EXPERIMENTAL" first="1">
+    <Class classname="jp.miyabilink.atm.Bank">
+      <SourceLine classname="jp.miyabilink.atm.Bank" sourcefile="Bank.java" sourcepath="jp/miyabilink/atm/Bank.java"/>
+    </Class>
+    <Method classname="jp.miyabilink.atm.Bank" name="addAccount" signature="(Ljava/lang/String;I)V" isStatic="false">
+      <SourceLine classname="jp.miyabilink.atm.Bank" start="164" end="166" startBytecode="0" endBytecode="86" sourcefile="Bank.java" sourcepath="jp/miyabilink/atm/Bank.java"/>
+    </Method>
+    <Class classname="java.io.Writer" role="CLASS_REFTYPE">
+      <SourceLine classname="java.io.Writer" sourcefile="Writer.java" sourcepath="java/io/Writer.java"/>
+    </Class>
+    <Int value="1" role="INT_OBLIGATIONS_REMAINING"/>
+    <SourceLine classname="jp.miyabilink.atm.Bank" start="164" end="164" startBytecode="6" endBytecode="6" sourcefile="Bank.java" sourcepath="jp/miyabilink/atm/Bank.java" role="SOURCE_LINE_OBLIGATION_CREATED"/>
+    <SourceLine classname="jp.miyabilink.atm.Bank" start="166" end="166" startBytecode="10" endBytecode="10" sourcefile="Bank.java" sourcepath="jp/miyabilink/atm/Bank.java" role="SOURCE_LINE_PATH_CONTINUES"/>
+    <String value="{Writer x 1}" role="STRING_REMAINING_OBLIGATIONS"/>
+  </BugInstance>
+  <BugInstance type="OS_OPEN_STREAM" priority="2" rank="16" abbrev="OS" category="BAD_PRACTICE" first="1">
+    <Class classname="jp.miyabilink.atm.Bank">
+      <SourceLine classname="jp.miyabilink.atm.Bank" sourcefile="Bank.java" sourcepath="jp/miyabilink/atm/Bank.java"/>
+    </Class>
+    <Method classname="jp.miyabilink.atm.Bank" name="addAccount" signature="(Ljava/lang/String;I)V" isStatic="false">
+      <SourceLine classname="jp.miyabilink.atm.Bank" start="164" end="166" startBytecode="0" endBytecode="5" sourcefile="Bank.java" sourcepath="jp/miyabilink/atm/Bank.java"/>
+    </Method>
+    <Type descriptor="Ljava/io/Writer;" role="TYPE_CLOSEIT">
+      <SourceLine classname="java.io.Writer" start="50" end="294" sourcefile="Writer.java" sourcepath="java/io/Writer.java"/>
+    </Type>
+    <SourceLine classname="jp.miyabilink.atm.Bank" start="164" end="164" startBytecode="0" endBytecode="0" sourcefile="Bank.java" sourcepath="jp/miyabilink/atm/Bank.java"/>
+    <SourceLine classname="jp.miyabilink.atm.Bank" start="164" end="164" startBytecode="0" endBytecode="0" sourcefile="Bank.java" sourcepath="jp/miyabilink/atm/Bank.java"/>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" first="1">
+    <Class classname="jp.miyabilink.atm.ggggggg">
+      <SourceLine classname="jp.miyabilink.atm.ggggggg" start="18" end="28" sourcefile="ggggggg.java" sourcepath="jp/miyabilink/atm/ggggggg.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" first="1">
+    <Class classname="junit.sample">
+      <SourceLine classname="junit.sample" start="11" end="32" sourcefile="sample.java" sourcepath="junit/sample.java"/>
+    </Class>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Sat, 30 Dec 2017 23:52:47 +0900" total_classes="1" referenced_classes="10" total_bugs="47" total_size="8" num_packages="5" java_version="1.8.0_131" vm_version="25.131-b11" cpu_seconds="152.05" clock_seconds="1058.36" peak_mbytes="1336.15" alloc_mbytes="1024.00" gc_seconds="0.99" priority_2="35" priority_1="12">
+    <PackageStats package="Entity" total_bugs="10" total_types="7" total_size="8" priority_2="9" priority_1="1">
+      <ClassStats class="Entity.FuncList" sourceFile="FuncList.java" interface="false" size="8" bugs="1" priority_2="1"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="563" invocations="302" avgMicrosecondsPerInvocation="1867" maxMicrosecondsPerInvocation="180044" standardDeviationMircosecondsPerInvocation="13598"/>
+      <ClassProfile name="de.tobject.findbugs.builder.FindBugs2Eclipse" totalMilliseconds="140" invocations="2" avgMicrosecondsPerInvocation="70377" maxMicrosecondsPerInvocation="132028" standardDeviationMircosecondsPerInvocation="61651"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History>
+    <AppVersion sequence="0" timestamp="1514644416995" release="" codeSize="0" numClasses="0"/>
+    <AppVersion sequence="1" timestamp="1514644416996" release="" codeSize="1443" numClasses="53"/>
+    <AppVersion sequence="2" timestamp="1514645137191" release="" codeSize="22" numClasses="2"/>
+    <AppVersion sequence="3" timestamp="1514645143903" release="" codeSize="19" numClasses="1"/>
+  </History>
+</BugCollection>

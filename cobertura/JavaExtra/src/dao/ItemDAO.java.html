@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ja"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>ItemDAO.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=2;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">AllTests (2017/12/31 11:56:03)</a> &gt; <a href="../../index.html" class="el_group">JavaExtra</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">dao</a> &gt; <span class="el_source">ItemDAO.java</span></div><h1>ItemDAO.java</h1><pre class="source lang-java linenums">package dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import dto.Item;
+
+<span class="nc" id="L13">public class ItemDAO {</span>
+
+<span class="nc" id="L15">	public static final String DATA_BASE = &quot;jdbc:h2:&quot;+ System.getProperty(&quot;user.dir&quot;) + &quot;/dataBase/practice&quot;;</span>
+	public static final String ID = &quot;sa&quot;;
+	public static final String PASS = &quot;&quot;;
+
+	// 静的初期化(初めてこのクラスを利用する時のみ作用)
+	static {
+		// 事前準備(jarファイルからクラス情報を読み込む)
+		try {
+<span class="nc" id="L23">			Class.forName(&quot;org.h2.Driver&quot;);</span>
+<span class="nc" id="L24">		} catch (ClassNotFoundException e) {</span>
+			// TODO 自動生成された catch ブロック
+<span class="nc" id="L26">			e.printStackTrace();</span>
+		}
+<span class="nc" id="L28">	}</span>
+
+	public List&lt;Item&gt; findByMinimumPrice(int price) {
+
+		// List型返す
+<span class="nc" id="L33">		List&lt;Item&gt; list = new ArrayList&lt;&gt;();</span>
+
+		// java7 以降のtry-with-resources書き方(closeを見かけ上省略)
+<span class="nc" id="L36">		try (Connection con2 = DriverManager.getConnection(DATA_BASE,	ID, PASS)){</span>
+//			con2.setAutoCommit(false); // 手動コミットに変更
+			// sql作成(変数あり)
+<span class="nc" id="L39">			StringBuilder sql2 = new StringBuilder();</span>
+<span class="nc" id="L40">			sql2.append(&quot;SELECT * &quot;);</span>
+<span class="nc" id="L41">			sql2.append(&quot;FROM ITEMS &quot;);</span>
+<span class="nc" id="L42">			sql2.append(&quot;WHERE PRICE &gt; ? &quot;);</span>
+<span class="nc" id="L43">			try (PreparedStatement pstmt2 = con2.prepareStatement(sql2.toString())){</span>
+				// SQLを組み立てて送信
+<span class="nc" id="L45">				int i = 1;</span>
+<span class="nc" id="L46">				pstmt2.setInt(i++, price);</span>
+<span class="nc" id="L47">				try (ResultSet rs = pstmt2.executeQuery()){</span>
+					// 複数結果
+<span class="nc bnc" id="L49" title="All 2 branches missed.">					while (rs.next()) {</span>
+<span class="nc" id="L50">						Item item = new Item();</span>
+<span class="nc" id="L51">						item.setName(rs.getString(&quot;NAME&quot;));</span>
+<span class="nc" id="L52">						item.setPrice(rs.getInt(&quot;PRICE&quot;));</span>
+<span class="nc" id="L53">						item.setWeight(rs.getInt(&quot;WEIGHT&quot;));</span>
+<span class="nc" id="L54">						list.add(item);</span>
+					}
+<span class="nc bnc" id="L56" title="All 8 branches missed.">				}</span>
+<span class="nc bnc" id="L57" title="All 8 branches missed.">			}</span>
+//			con2.commit();
+<span class="nc bnc" id="L59" title="All 8 branches missed.">		} catch (SQLException e) {</span>
+			// TODO 自動生成された catch ブロック
+<span class="nc" id="L61">			e.printStackTrace();</span>
+<span class="nc" id="L62">			return null;</span>
+		}
+
+<span class="nc" id="L65">		return list;</span>
+
+	}
+
+
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>AllTests (2017/12/31 11:56:03)</div></body></html>

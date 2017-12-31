@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ja"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>Session7.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=2;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">AllTests (2017/12/31 11:56:03)</a> &gt; <a href="../../index.html" class="el_group">JavaExtra</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">Main</a> &gt; <span class="el_source">Session7.java</span></div><h1>Session7.java</h1><pre class="source lang-java linenums">package Main;
+
+import java.io.IOException;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Properties;
+
+import Entity.RefSample;
+
+<span class="nc" id="L15">public class Session7 {</span>
+
+	public static void main(String[] args) throws IOException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchFieldException {
+		// TODO 自動生成されたメソッド・スタブ
+		// 任意のアプリケーションを起動する
+<span class="nc" id="L20">		System.out.println(&quot;計算を開始します。&quot;);</span>
+<span class="nc" id="L21">		int a = 2;</span>
+<span class="nc" id="L22">		int b = 4;</span>
+<span class="nc" id="L23">		System.out.println(a+b);</span>
+<span class="nc" id="L24">		System.out.println(&quot;計算完了。結果をメモ帳で表示します。&quot;);</span>
+<span class="nc" id="L25">		ProcessBuilder pd = new ProcessBuilder</span>
+<span class="nc" id="L26">				(&quot;/Applications/Emacs.app/Contents/MacOS/Emacs&quot;,</span>
+<span class="nc" id="L27">						&quot;/Users/MIBOX/Desktop/workspace/txt/calcreport.txt&quot;);</span>
+<span class="nc" id="L28">		pd.start();</span>
+
+		// システムプロパティを取得
+<span class="nc" id="L31">		System.out.println(&quot;ご利用のJavaのバージョン&quot;);</span>
+<span class="nc" id="L32">		System.out.println(System.getProperty(&quot;java.version&quot;));</span>
+<span class="nc" id="L33">		Properties p = System.getProperties();</span>
+<span class="nc" id="L34">		Iterator&lt;String&gt; i = p.stringPropertyNames().iterator();</span>
+<span class="nc" id="L35">		System.out.println(&quot;【システムプロパティ一覧】&quot;);</span>
+<span class="nc bnc" id="L36" title="All 2 branches missed.">		while(i.hasNext()) {</span>
+<span class="nc" id="L37">			String key = i.next();</span>
+<span class="nc" id="L38">			System.out.print(key + &quot; = &quot;);</span>
+<span class="nc" id="L39">			System.out.println(System.getProperty(key));</span>
+		}
+
+		// システムごとの改行コードを受け取る
+<span class="nc" id="L43">		final String BR = System.getProperty(&quot;line.separator&quot;);</span>
+<span class="nc" id="L44">		System.out.println(&quot;本日は&quot; + BR + &quot;晴天なり&quot;);</span>
+
+		// システムプロパティの設定
+<span class="nc" id="L47">		System.setProperty(&quot;rpg.version&quot;, &quot;0.3&quot;);</span>
+
+		// OS環境変数
+<span class="nc" id="L50">		Map&lt;String,String&gt; os = System.getenv();</span>
+<span class="nc" id="L51">		Iterator&lt;String&gt; ios = os.keySet().iterator();</span>
+<span class="nc bnc" id="L52" title="All 2 branches missed.">		while(ios.hasNext()) {</span>
+<span class="nc" id="L53">			String key = ios.next();</span>
+<span class="nc" id="L54">			System.out.print(key + &quot; = &quot;);</span>
+<span class="nc" id="L55">			System.out.println(System.getenv(key));</span>
+		}
+
+		// メモリ確認
+<span class="nc" id="L59">		long f = Runtime.getRuntime().freeMemory() / 1024 / 1024;</span>
+<span class="nc" id="L60">		long t = Runtime.getRuntime().totalMemory() / 1024 / 1024;</span>
+<span class="nc" id="L61">		long m = Runtime.getRuntime().maxMemory() / 1024 / 1024;</span>
+<span class="nc" id="L62">		System.out.println(&quot;残り &quot; + f + &quot; MB&quot;);</span>
+<span class="nc" id="L63">		System.out.println(&quot;総容量 &quot; + t + &quot; MB&quot;);</span>
+<span class="nc" id="L64">		System.out.println(&quot;限界値 &quot; + m + &quot; MB&quot;);</span>
+
+		// クラスの情報を入手する
+		// Stringに関する情報を取得して表示する
+<span class="nc" id="L68">		Class&lt;?&gt; info1 = String.class;</span>
+<span class="nc" id="L69">		System.out.println(info1.getSimpleName()); //-&gt;String</span>
+<span class="nc" id="L70">		System.out.println(info1.getName()); //-&gt;java.lang.String</span>
+<span class="nc" id="L71">		System.out.println(info1.getPackage().getName()); //-&gt;java.lang</span>
+<span class="nc" id="L72">		System.out.println(info1.isArray()); //-&gt;false</span>
+
+		// Stringの親クラスの情報を所得する
+<span class="nc" id="L75">		Class&lt;?&gt; info2 = info1.getSuperclass();</span>
+<span class="nc" id="L76">		System.out.println(info2.getName()); //-&gt;java.lang.Object</span>
+
+		//argsは文字列配列として判定される
+<span class="nc" id="L79">		Class&lt;?&gt; info3 = args.getClass();</span>
+<span class="nc" id="L80">		System.out.println(info3.isArray()); //-&gt;true</span>
+
+		// クラスの情報を入手しあれこれ(使用用途不明)
+<span class="nc" id="L83">		Class&lt;?&gt; clazz = RefSample.class;</span>
+		// 引数intをもつコンストラクタを取得し、インスタンスを生成する。
+<span class="nc" id="L85">		Constructor&lt;?&gt; cons = clazz.getConstructor(int.class);</span>
+<span class="nc" id="L86">		RefSample rs = (RefSample) cons.newInstance(256);</span>
+		// pubフィールドに関するFieldを取得して読み書き
+<span class="nc" id="L88">		Field fi = clazz.getField(&quot;times&quot;);</span>
+<span class="nc" id="L89">		fi.set(rs, 2);                  // rsのtimesに代入</span>
+<span class="nc" id="L90">		System.out.println(fi.get(rs)); //rsのtimesを取得</span>
+		// 引数2つ(String, int)のhelloメソッドを取得して呼び出す
+<span class="nc" id="L92">		Method me = clazz.getMethod(&quot;hello&quot;, String.class, int.class);</span>
+<span class="nc" id="L93">		me.invoke(rs, &quot;reflection!&quot;, 128);</span>
+		// クラスやメソッドへの修飾(publicやfinalの有無)を調べる
+<span class="nc" id="L95">		boolean pubc = Modifier.isPublic(clazz.getModifiers());</span>
+<span class="nc" id="L96">		boolean finm = Modifier.isFinal(me.getModifiers());</span>
+<span class="nc" id="L97">		System.out.println(pubc + &quot;, &quot; + finm);</span>
+
+
+
+//		if(true) {
+//			System.out.println(&quot;データが壊れています。異常終了します。&quot;);
+//			// システムを強制終了させる(0:正常終了、他異常終了)
+//			System.exit(1);
+//		}
+<span class="nc" id="L106">		System.out.println(&quot;正常終了しました&quot;);</span>
+
+<span class="nc" id="L108">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>AllTests (2017/12/31 11:56:03)</div></body></html>

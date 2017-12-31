@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ja"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>Pra2.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=2;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">AllTests (2017/12/31 11:56:03)</a> &gt; <a href="../../index.html" class="el_group">JavaExtra</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">Main</a> &gt; <span class="el_source">Pra2.java</span></div><h1>Pra2.java</h1><pre class="source lang-java linenums">package Main;
+
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+import java.util.Date;
+
+<span class="nc" id="L9">public class Pra2 {</span>
+
+	public static void main(String[] args) {
+		// Date型を使う
+<span class="nc" id="L13">		Date now = new Date();</span>
+<span class="nc" id="L14">		Calendar c = Calendar.getInstance();</span>
+<span class="nc" id="L15">		c.setTime(now);</span>
+<span class="nc" id="L16">		int day = c.get(Calendar.DAY_OF_MONTH);</span>
+<span class="nc" id="L17">		c.set(Calendar.DAY_OF_MONTH, day + 100);</span>
+<span class="nc" id="L18">		Date future = c.getTime();</span>
+<span class="nc" id="L19">		SimpleDateFormat f = new SimpleDateFormat(&quot;西暦yyyy年MM月dd日&quot;);</span>
+<span class="nc" id="L20">		System.out.println(f.format(future));</span>
+
+		// timeパッケージを使う
+<span class="nc" id="L23">		LocalDate localDate = LocalDate.now();</span>
+<span class="nc" id="L24">		LocalDate futureLocalDate = localDate.plusDays(100);</span>
+<span class="nc" id="L25">		DateTimeFormatter dateTimeFormatter</span>
+<span class="nc" id="L26">				= DateTimeFormatter.ofPattern(&quot;西暦yyyy年MM月dd日&quot;);</span>
+<span class="nc" id="L27">		System.out.println(futureLocalDate.format(dateTimeFormatter));</span>
+
+<span class="nc" id="L29">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>AllTests (2017/12/31 11:56:03)</div></body></html>

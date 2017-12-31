@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ja"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>Session11.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=2;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">AllTests (2017/12/31 11:56:03)</a> &gt; <a href="../../index.html" class="el_group">JavaExtra</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">Main</a> &gt; <span class="el_source">Session11.java</span></div><h1>Session11.java</h1><pre class="source lang-java linenums">package Main;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.MalformedURLException;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.net.URL;
+import java.net.UnknownHostException;
+
+<span class="nc" id="L13">public class Session11 {</span>
+
+	public static void main(String[] args) {
+		// TODO 自動生成されたメソッド・スタブ
+		// urlに接続(単純:簡易)
+<span class="nc" id="L18">		InputStreamReader isr = null;</span>
+		try {
+<span class="nc" id="L20">			URL url = new URL(&quot;http://dokojava.jp&quot;);</span>
+<span class="nc" id="L21">			InputStream is = url.openStream(); // これではバイトのまま</span>
+<span class="nc" id="L22">			isr = new InputStreamReader(is); // これで1文字にできる(BufferedReaderに変換もできるようになる)</span>
+<span class="nc" id="L23">			int i = isr.read();</span>
+<span class="nc bnc" id="L24" title="All 2 branches missed.">			while(i != -1) {</span>
+<span class="nc" id="L25">				System.out.print((char) i);</span>
+<span class="nc" id="L26">				i = isr.read();</span>
+			}
+<span class="nc" id="L28">		} catch (MalformedURLException e) {</span>
+			// TODO 自動生成された catch ブロック
+<span class="nc" id="L30">			e.printStackTrace();</span>
+<span class="nc" id="L31">		} catch (IOException e) {</span>
+			// TODO 自動生成された catch ブロック
+<span class="nc" id="L33">			e.printStackTrace();</span>
+<span class="nc" id="L34">		} finally {</span>
+<span class="nc bnc" id="L35" title="All 8 branches missed.">			if(isr != null) {</span>
+				try {
+<span class="nc" id="L37">					isr.close();</span>
+<span class="nc" id="L38">				} catch (IOException e) {</span>
+					// TODO 自動生成された catch ブロック
+<span class="nc" id="L40">					e.printStackTrace();</span>
+				}
+			}
+<span class="nc" id="L43">		}</span>
+
+<span class="nc" id="L45">		System.out.println();</span>
+<span class="nc" id="L46">		System.out.println();</span>
+
+		//urlに接続(詳細:複雑)
+<span class="nc" id="L49">		Socket sock = null;</span>
+		try {
+<span class="nc" id="L51">			sock = new Socket(&quot;dokojava.jp&quot;, 80);</span>
+<span class="nc" id="L52">			InputStream is = sock.getInputStream();</span>
+<span class="nc" id="L53">			OutputStream os = sock.getOutputStream();</span>
+<span class="nc" id="L54">			os.write(&quot;GET /index.html HTTP/1.0\r\n&quot;.getBytes());</span>
+<span class="nc" id="L55">			os.write(&quot;\r\n&quot;.getBytes());</span>
+<span class="nc" id="L56">			os.flush();</span>
+<span class="nc" id="L57">			InputStreamReader isr2 = new InputStreamReader(is);</span>
+<span class="nc" id="L58">			int i = isr2.read();</span>
+<span class="nc bnc" id="L59" title="All 2 branches missed.">			while(i != -1) {</span>
+<span class="nc" id="L60">				System.out.print((char) i);</span>
+<span class="nc" id="L61">				i = isr2.read();</span>
+			}
+
+<span class="nc" id="L64">		} catch (UnknownHostException e) {</span>
+			// TODO 自動生成された catch ブロック
+<span class="nc" id="L66">			e.printStackTrace();</span>
+<span class="nc" id="L67">		} catch (IOException e) {</span>
+			// TODO 自動生成された catch ブロック
+<span class="nc" id="L69">			e.printStackTrace();</span>
+<span class="nc" id="L70">		} finally {</span>
+<span class="nc bnc" id="L71" title="All 8 branches missed.">			if(sock != null) {</span>
+				try {
+<span class="nc" id="L73">					sock.close();</span>
+<span class="nc" id="L74">				} catch (IOException e) {</span>
+					// TODO 自動生成された catch ブロック
+<span class="nc" id="L76">					e.printStackTrace();</span>
+				}
+			}
+<span class="nc" id="L79">		}</span>
+
+<span class="nc" id="L81">		System.out.println();</span>
+
+		//自分が接続される側になる
+<span class="nc" id="L84">		System.out.println(&quot;起動完了&quot;);</span>
+<span class="nc" id="L85">		ServerSocket svSock = null;</span>
+		try {
+<span class="nc" id="L87">			svSock = new ServerSocket(39648);</span>
+<span class="nc" id="L88">			Socket sock2 = svSock.accept(); // 呼び出すと誰かから接続されるまでまつ。</span>
+<span class="nc" id="L89">			System.out.println(sock2.getInetAddress() + &quot;からの接続&quot;);</span>
+<span class="nc" id="L90">			sock2.getOutputStream().write(&quot;WELCOME&quot;.getBytes());</span>
+<span class="nc" id="L91">			sock2.getOutputStream().flush();</span>
+<span class="nc" id="L92">		} catch (IOException e) {</span>
+			// TODO 自動生成された catch ブロック
+<span class="nc" id="L94">			e.printStackTrace();</span>
+<span class="nc" id="L95">		} finally {</span>
+<span class="nc bnc" id="L96" title="All 6 branches missed.">			if(svSock != null) {</span>
+				try {
+<span class="nc" id="L98">					svSock.close();</span>
+<span class="nc" id="L99">				} catch (IOException e) {</span>
+					// TODO 自動生成された catch ブロック
+<span class="nc" id="L101">					e.printStackTrace();</span>
+				}
+			}
+<span class="nc" id="L104">		}</span>
+
+
+
+
+
+<span class="nc" id="L110">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>AllTests (2017/12/31 11:56:03)</div></body></html>

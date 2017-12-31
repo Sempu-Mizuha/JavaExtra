@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ja"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>Main.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=2;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">AllTests (2017/12/31 11:56:03)</a> &gt; <a href="../../index.html" class="el_group">JavaExtra</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">Main</a> &gt; <span class="el_source">Main.java</span></div><h1>Main.java</h1><pre class="source lang-java linenums">/**
+ *
+ */
+package Main;
+
+import java.util.regex.Pattern;
+
+import Entity.Hero;
+
+/**
+ * @author MIBOX
+ *
+ */
+<span class="nc" id="L14">public class Main {</span>
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO 自動生成されたメソッド・スタブ
+<span class="nc" id="L20">		String s1 = &quot;スッキリJava&quot;;</span>
+<span class="nc" id="L21">		String s2 = &quot;Java&quot;;</span>
+<span class="nc" id="L22">		String s3 = &quot;java&quot;;</span>
+		@SuppressWarnings(&quot;unused&quot;)
+<span class="nc" id="L24">		String nullParameter = null;</span>
+
+<span class="nc bnc" id="L26" title="All 2 branches missed.">		if(s2.equals(s3)) {</span>
+<span class="nc" id="L27">			System.out.println(&quot;s2とs3は等しい&quot;);</span>
+		}
+<span class="nc bnc" id="L29" title="All 2 branches missed.">		if(s2.equalsIgnoreCase(s3)) {</span>
+			// ケース:大文字と小文字の区別
+<span class="nc" id="L31">			System.out.println(&quot;s2とs3はケースを区別しなければ等しい&quot;);</span>
+		}
+<span class="nc" id="L33">		System.out.println(&quot;s1の長さは&quot; + s1.length() + &quot;です&quot;); // 8</span>
+<span class="nc bnc" id="L34" title="All 2 branches missed.">		if(s1.isEmpty()) {</span>
+<span class="nc" id="L35">			System.out.println(&quot;s1は空文字です&quot;);</span>
+		}
+
+<span class="nc" id="L38">		s1 = &quot;Java and JavaScript&quot;;</span>
+
+<span class="nc bnc" id="L40" title="All 2 branches missed.">		if(s1.contains(&quot;Java&quot;)) {</span>
+<span class="nc" id="L41">			System.out.println(&quot;文字列s1は、Javaを含んでいます&quot;);</span>
+		}
+<span class="nc bnc" id="L43" title="All 2 branches missed.">		if(s1.startsWith(&quot;Java&quot;)) {</span>
+<span class="nc" id="L44">			System.out.println(&quot;文字列s1は、Javaが始めにあります&quot;);</span>
+		}
+<span class="nc bnc" id="L46" title="All 2 branches missed.">		if(s1.endsWith(&quot;Java&quot;)) {</span>
+<span class="nc" id="L47">			System.out.println(&quot;文字列s1は、Javaが末尾にあります&quot;);</span>
+		}
+<span class="nc" id="L49">		System.out.println(&quot;文字列s1で最初にJavaが登場する位置は&quot;</span>
+<span class="nc" id="L50">										+ s1.indexOf(&quot;Java&quot;)); // 0</span>
+<span class="nc" id="L51">		System.out.println(&quot;文字列s1で最後にJavaが登場する位置は&quot;</span>
+<span class="nc" id="L52">										+ s1.lastIndexOf(&quot;Java&quot;)); // 9</span>
+
+<span class="nc" id="L54">		s1 = &quot;Java programming&quot;;</span>
+<span class="nc" id="L55">		System.out.println(&quot;文字列3文字目以降は&quot;</span>
+<span class="nc" id="L56">								+ s1.substring(3)); // a programming</span>
+
+<span class="nc" id="L58">		System.out.println(&quot;文字列3~8文字目以降は&quot;</span>
+<span class="nc" id="L59">								+ s1.substring(3, 8)); // a pro</span>
+
+<span class="nc" id="L61">		StringBuilder sb = new StringBuilder();</span>
+<span class="nc bnc" id="L62" title="All 2 branches missed.">		for(int i = 0; i &lt; 5000 ; i++) {</span>
+<span class="nc" id="L63">			sb.append(&quot;Java&quot;);</span>
+		}
+		//String s = sb.toString();
+<span class="nc" id="L66">		System.out.println(sb);</span>
+
+<span class="nc" id="L68">		String s10 = &quot;&quot;;</span>
+<span class="nc bnc" id="L69" title="All 2 branches missed.">		for(int i = 0; i &lt; 5000 ; i++) {</span>
+<span class="nc" id="L70">			s10 += &quot;Java&quot;;</span>
+		}
+<span class="nc" id="L72">		System.out.println(s10);</span>
+
+<span class="nc" id="L74">		Pattern pattern = Pattern.compile(&quot;^.*$&quot;);</span>
+<span class="nc" id="L75">		System.out.println(pattern.matcher(&quot;&quot;).matches());</span>
+
+<span class="nc" id="L77">		String s = &quot;Java&quot;;</span>
+<span class="nc" id="L78">		System.out.println(s.matches(&quot;Java&quot;)); // true</span>
+<span class="nc" id="L79">		System.out.println(s.matches(&quot;JavaJava&quot;)); // false</span>
+<span class="nc" id="L80">		System.out.println(s.matches(&quot;java&quot;)); // false</span>
+<span class="nc" id="L81">		System.out.println(s.matches(&quot;J.va&quot;)); // true</span>
+<span class="nc" id="L82">		System.out.println(&quot;Jaaaaava&quot;.matches(&quot;Ja*va&quot;)); // true</span>
+<span class="nc" id="L83">		System.out.println(&quot;あいskfhbldふぇjr&quot;.matches(&quot;.*&quot;)); // true</span>
+
+<span class="nc" id="L85">		System.out.println(&quot;----------------------------&quot;);</span>
+
+<span class="nc" id="L87">		System.out.println(s.matches(&quot;Ma.*&quot;)); // Maで始まる</span>
+<span class="nc" id="L88">		System.out.println(s.matches(&quot;.*ful&quot;)); // fulで終わる</span>
+<span class="nc" id="L89">		System.out.println(&quot;url&quot;.matches(&quot;[a-z]{3}&quot;)); // true</span>
+
+<span class="nc" id="L91">		s = &quot;abc,def:ghi&quot;;</span>
+<span class="nc" id="L92">		String[] words = s.split(&quot;[,:]&quot;);</span>
+<span class="nc bnc" id="L93" title="All 2 branches missed.">		for(String w : words) {</span>
+<span class="nc" id="L94">			System.out.print(w + &quot;-&gt;&quot;);</span>
+		}
+<span class="nc" id="L96">		String w = s.replaceAll(&quot;[beh]&quot;, &quot;X&quot;);</span>
+<span class="nc" id="L97">		System.out.println(w); // aXc,dXf:gXi</span>
+
+<span class="nc" id="L99">		Hero hero = new Hero();</span>
+<span class="nc" id="L100">		hero.setName(&quot;minato&quot;);</span>
+<span class="nc" id="L101">		hero.setJob(&quot;hero&quot;);</span>
+<span class="nc" id="L102">		hero.setGold(28000);</span>
+<span class="nc" id="L103">		final String FORMAT = &quot;%-8s  %-6s  所持金%,5d\n&quot;;</span>
+<span class="nc" id="L104">		s = String.format(FORMAT, hero.getName(), hero.getJob(), hero.getGold());</span>
+<span class="nc" id="L105">		System.out.println(s);</span>
+<span class="nc" id="L106">		System.out.printf(FORMAT, hero.getName(), hero.getJob(), hero.getGold());</span>
+<span class="nc" id="L107">		System.out.printf(&quot;製品番号%s-%02d\n&quot;,&quot;SJV&quot;,3);</span>
+
+
+
+<span class="nc" id="L111">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>AllTests (2017/12/31 11:56:03)</div></body></html>

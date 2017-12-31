@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ja"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>AccountType.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=2;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">AllTests (2017/12/31 11:56:03)</a> &gt; <a href="../../index.html" class="el_group">JavaExtra</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">Enum</a> &gt; <span class="el_source">AccountType.java</span></div><h1>AccountType.java</h1><pre class="source lang-java linenums"><span class="nc" id="L1">package Enum;</span>
+
+import java.util.HashMap;
+import java.util.Map;
+
+<span class="nc" id="L6">public enum AccountType {</span>
+<span class="nc" id="L7">	FUTSU(1), //jjjjjj</span>
+<span class="nc" id="L8">	TOUZA(2), //uuuuuu</span>
+<span class="nc" id="L9">	TEIKI(3); //ooooo</span>
+
+	private int num;
+	private Map&lt;Integer, AccountType&gt; typeByValue;
+
+<span class="nc" id="L14">	private AccountType(int num) {</span>
+<span class="nc" id="L15">		this.num = num;</span>
+<span class="nc" id="L16">	}</span>
+
+	/**
+	 * @return num
+	 */
+	public int getNum() {
+<span class="nc" id="L22">		return num;</span>
+	}
+
+	public AccountType getTypeByValue(int str){
+		try {
+<span class="nc" id="L27">			makeMap();</span>
+<span class="nc" id="L28">			return getType(str);</span>
+<span class="nc" id="L29">		} catch (IllegalArgumentException e) {</span>
+<span class="nc" id="L30">			e.printStackTrace();</span>
+<span class="nc" id="L31">			return null;</span>
+		}
+	}
+
+	private void makeMap(){
+<span class="nc bnc" id="L36" title="All 2 branches missed.">		if(typeByValue == null) {</span>
+<span class="nc" id="L37">			typeByValue = new HashMap&lt;Integer, AccountType&gt;();</span>
+<span class="nc bnc" id="L38" title="All 2 branches missed.">			for(AccountType v : values()){</span>
+<span class="nc" id="L39">				typeByValue.put(v.getNum(), v);</span>
+			}
+		}
+<span class="nc" id="L42">	}</span>
+
+	private AccountType getType(int str){
+<span class="nc" id="L45">		AccountType accountType = typeByValue.get(str);</span>
+<span class="nc bnc" id="L46" title="All 2 branches missed.">		if(accountType == null) {</span>
+<span class="nc" id="L47">			throw new IllegalArgumentException(&quot;undefined : &quot; + str);</span>
+		}
+<span class="nc" id="L49">		return accountType;</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>AllTests (2017/12/31 11:56:03)</div></body></html>

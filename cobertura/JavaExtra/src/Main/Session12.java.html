@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ja"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>Session12.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=2;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">AllTests (2017/12/31 11:56:03)</a> &gt; <a href="../../index.html" class="el_group">JavaExtra</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">Main</a> &gt; <span class="el_source">Session12.java</span></div><h1>Session12.java</h1><pre class="source lang-java linenums">package Main;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+
+import dao.ItemDAO;
+import dto.Item;
+
+<span class="nc" id="L13">public class Session12 {</span>
+
+<span class="nc" id="L15">	public static final String DATA_BASE = &quot;jdbc:h2:&quot;+ System.getProperty(&quot;user.dir&quot;) + &quot;/dataBase/practice&quot;;</span>
+	public static final String ID = &quot;sa&quot;;
+	public static final String PASS = &quot;&quot;;
+
+	// 静的初期化(初めてこのクラスを利用する時のみ作用)
+	static {
+		// 事前準備(jarファイルからクラス情報を読み込む)
+		try {
+<span class="nc" id="L23">			Class.forName(&quot;org.h2.Driver&quot;);</span>
+<span class="nc" id="L24">		} catch (ClassNotFoundException e) {</span>
+			// TODO 自動生成された catch ブロック
+<span class="nc" id="L26">			e.printStackTrace();</span>
+		}
+<span class="nc" id="L28">	}</span>
+
+	public static void main(String[] args) {
+		// TODO 自動生成されたメソッド・スタブ
+//		// 事前準備(jarファイルからクラス情報を読み込む)
+//		try {
+//			Class.forName(&quot;org.h2.Driver&quot;);
+//		} catch (ClassNotFoundException e) {
+//			// TODO 自動生成された catch ブロック
+//			e.printStackTrace();
+//		}
+
+<span class="nc" id="L40">		Connection con = null;</span>
+<span class="nc" id="L41">		PreparedStatement pstmt = null;</span>
+		try {
+			// db接続
+<span class="nc" id="L44">			con = DriverManager.getConnection(DATA_BASE,	ID, PASS);</span>
+<span class="nc" id="L45">			con.setAutoCommit(false); // コミットを手動で行う</span>
+
+			// sql作成(変数あり)
+<span class="nc" id="L48">			StringBuilder sql = new StringBuilder();</span>
+<span class="nc" id="L49">			sql.append(&quot;DELETE &quot;);</span>
+<span class="nc" id="L50">			sql.append(&quot;FROM MONSTERS &quot;);</span>
+<span class="nc" id="L51">			sql.append(&quot;WHERE HP &lt;= ? &quot;);</span>
+<span class="nc" id="L52">			sql.append(&quot;OR NAME = ? &quot;);</span>
+
+			// 雛形を準備
+<span class="nc" id="L55">			pstmt = con.prepareStatement(sql.toString());</span>
+
+			// ?を埋めて送信する
+<span class="nc" id="L58">			int i = 1;</span>
+<span class="nc" id="L59">			pstmt.setInt(i++, 10); // 1番目</span>
+<span class="nc" id="L60">			pstmt.setString(i++, &quot;ゾンビ&quot;); // 2番目</span>
+<span class="nc" id="L61">			int r = pstmt.executeUpdate();</span>
+
+			// 少し異なるSQLを再度叩き込む(基盤を使い回しできる)
+<span class="nc" id="L64">			int j = 1;</span>
+<span class="nc" id="L65">			pstmt.setInt(j++, 5); // 1番目</span>
+<span class="nc" id="L66">			pstmt.setString(j++, &quot;ゴブリン&quot;); // 2番目</span>
+<span class="nc" id="L67">			pstmt.executeUpdate();</span>
+
+			// 結果
+<span class="nc bnc" id="L70" title="All 2 branches missed.">			if(r != 0) {</span>
+<span class="nc" id="L71">				System.out.println(r + &quot;件のデータを消去しました&quot;);</span>
+<span class="nc" id="L72">				con.commit(); // コミット手動</span>
+<span class="nc" id="L73">			} else {</span>
+<span class="nc" id="L74">				System.out.println(&quot;該当するモンスターはいませんでした&quot;);</span>
+<span class="nc" id="L75">				throw new SQLException();</span>
+			}
+
+<span class="nc" id="L78">		} catch (SQLException e) {</span>
+			// TODO 自動生成された catch ブロック
+<span class="nc" id="L80">			e.printStackTrace();</span>
+<span class="nc bnc" id="L81" title="All 2 branches missed.">			if(con != null) {</span>
+				try {
+<span class="nc" id="L83">					con.rollback(); // ロールバック</span>
+<span class="nc" id="L84">				} catch (SQLException e1) {</span>
+					// TODO 自動生成された catch ブロック
+<span class="nc" id="L86">					e1.printStackTrace();</span>
+				}
+			}
+<span class="nc" id="L89">		} finally {</span>
+			// 雛形閉じる
+<span class="nc bnc" id="L91" title="All 6 branches missed.">			if(pstmt != null) {</span>
+				try {
+<span class="nc" id="L93">					pstmt.close();</span>
+<span class="nc" id="L94">				} catch (SQLException e) {</span>
+					// TODO 自動生成された catch ブロック
+<span class="nc" id="L96">					e.printStackTrace();</span>
+				}
+			}
+			// db切断
+<span class="nc bnc" id="L100" title="All 6 branches missed.">			if(con != null) {</span>
+				try {
+<span class="nc" id="L102">					con.close();</span>
+<span class="nc" id="L103">				} catch (SQLException e) {</span>
+					// TODO 自動生成された catch ブロック
+<span class="nc" id="L105">					e.printStackTrace();</span>
+				}
+			}
+
+<span class="nc" id="L109">		}</span>
+
+		// java7 以降のtry-with-resources書き方(closeを見かけ上省略)
+<span class="nc" id="L112">		try (Connection con2 = DriverManager.getConnection(DATA_BASE,	ID, PASS);){</span>
+			// sql作成(変数あり)
+<span class="nc" id="L114">			StringBuilder sql2 = new StringBuilder();</span>
+<span class="nc" id="L115">			sql2.append(&quot;SELECT * &quot;);</span>
+<span class="nc" id="L116">			sql2.append(&quot;FROM MONSTERS &quot;);</span>
+<span class="nc" id="L117">			sql2.append(&quot;WHERE HP &gt;= ? &quot;);</span>
+<span class="nc" id="L118">			try (PreparedStatement pstmt2 = con2.prepareStatement(sql2.toString());){</span>
+				// SQLを組み立てて送信
+<span class="nc" id="L120">				int i = 1;</span>
+<span class="nc" id="L121">				pstmt2.setInt(i++, 10);</span>
+<span class="nc" id="L122">				try (ResultSet rs = pstmt2.executeQuery();){</span>
+					// 複数結果
+<span class="nc bnc" id="L124" title="All 2 branches missed.">					while(rs.next()) {</span>
+<span class="nc" id="L125">						System.out.println(rs.getString(&quot;NAME&quot;));</span>
+					}
+					// 単数結果
+<span class="nc bnc" id="L128" title="All 2 branches missed.">					if(rs.next()) {</span>
+<span class="nc" id="L129">						System.out.println(&quot;ゴブリンのHPは&quot; + rs.getInt(&quot;HP&quot;));</span>
+<span class="nc" id="L130">					} else {</span>
+<span class="nc" id="L131">						System.out.println(&quot;ゴブリンはDBに存在しません&quot;);</span>
+					}
+<span class="nc bnc" id="L133" title="All 8 branches missed.">				}</span>
+<span class="nc bnc" id="L134" title="All 8 branches missed.">			}</span>
+<span class="nc bnc" id="L135" title="All 8 branches missed.">		} catch (SQLException e) {</span>
+			// TODO 自動生成された catch ブロック
+<span class="nc" id="L137">			e.printStackTrace();</span>
+		}
+
+<span class="nc" id="L140">		System.out.println(&quot;1円以上のアイテム一覧表を表示します&quot;);</span>
+<span class="nc" id="L141">		ItemDAO itemDAO = new ItemDAO();</span>
+<span class="nc" id="L142">		List&lt;Item&gt; items = itemDAO.findByMinimumPrice(1);</span>
+<span class="nc bnc" id="L143" title="All 2 branches missed.">		for(Item item : items) {</span>
+<span class="nc" id="L144">			System.out.printf(&quot;%10s%4d%4d\n&quot;, item.getName(), item.getPrice(), item.getWeight());</span>
+		}
+
+
+
+
+
+
+<span class="nc" id="L152">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>AllTests (2017/12/31 11:56:03)</div></body></html>

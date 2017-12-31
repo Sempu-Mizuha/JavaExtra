@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ja"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>AccountTest.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=2;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">AllTests (2017/12/31 11:56:03)</a> &gt; <a href="../../index.html" class="el_group">JavaExtra</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">junit</a> &gt; <span class="el_source">AccountTest.java</span></div><h1>AccountTest.java</h1><pre class="source lang-java linenums">/**
+ * パッケージ.クラス名:
+ * junit.AccountTest
+ */
+package junit;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import jp.miyabilink.atm.Account;
+
+/**
+ * テストクラス
+ * @author Sempu-Mizuha
+ * @version 1.0
+ * @since 1.0 Sempu-Mizuha 2017/12/29 19:34:03 &lt;br&gt;
+ */
+<span class="pc bpc" id="L19" title="1 of 2 branches missed.">public class AccountTest {</span>
+
+	/**
+	 * {@link jp.miyabilink.atm.Account#Account(java.lang.String, int)} のためのテスト・メソッド。
+	 * 実際にAccountをnewして使ってみるテスト
+	 * @since 1.0 Sempu-Mizuha 2017/12/29 20:06:56 &lt;br&gt;
+	 */
+	@Test
+	public void testAccount() {
+<span class="fc" id="L28">		Account a = new Account(&quot;ミナト&quot;, 30000);</span>
+<span class="fc" id="L29">		assertEquals(&quot;ミナト&quot;, a.getOwner());</span>
+<span class="fc" id="L30">		assertEquals(30000, a.getBalance());</span>
+<span class="fc" id="L31">	}</span>
+
+	/**
+	 * {@link jp.miyabilink.atm.Account#transfer(jp.miyabilink.atm.Account, int)} のためのテスト・メソッド。
+	 * @since 1.0 Sempu-Mizuha 2017/12/29 20:08:06 &lt;br&gt;
+	 */
+	@Test
+	public void testTransferAccountInt() {
+<span class="fc" id="L39">		Account minato = new Account(&quot;ミナト&quot;, 5000);</span>
+<span class="fc" id="L40">		Account asaka = new Account(&quot;アサカ&quot;, 5000);</span>
+<span class="nc" id="L41">		minato.transfer(asaka, 40000);</span>
+<span class="nc" id="L42">		System.out.println(minato.getBalance());</span>
+
+<span class="nc" id="L44">		System.out.println(&quot;アサートにわざと失敗します&quot;);</span>
+<span class="nc bnc" id="L45" title="All 2 branches missed.">		assert 1 == 0;</span>
+<span class="nc" id="L46">		System.out.println(&quot;正常終了します&quot;);</span>
+<span class="nc" id="L47">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>AllTests (2017/12/31 11:56:03)</div></body></html>
