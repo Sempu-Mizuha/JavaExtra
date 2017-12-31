@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="false" context="gettercomment_context" deleted="false" description="getter メソッドのコメント" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.gettercomment" name="gettercomment">/**
  * ${todo} x.xにバージョンを記載:この行は削除すること
- * ${bare_field_name}を取得するメソッド
+ * ${bare_field_name}を取得するメソッド.
  * @return ${bare_field_name}を取得する
  * @since x.x ${name:git_config(user.name)} ${date} ${time} &lt;br&gt;
  */</template><template autoinsert="false" context="settercomment_context" deleted="false" description="setter メソッドのコメント" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.settercomment" name="settercomment">/**
  * ${todo} x.xにバージョンを記載:この行は削除すること
- * ${bare_field_name}を登録するメソッド
+ * ${bare_field_name}を登録するメソッド.
  * @param ${param} ${bare_field_name}を登録する
  * @since x.x ${name:git_config(user.name)} ${date} ${time} &lt;br&gt;
  */</template><template autoinsert="false" context="constructorcomment_context" deleted="false" description="作成済みコンストラクターのコメント" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.constructorcomment" name="constructorcomment">/**
