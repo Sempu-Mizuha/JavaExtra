@@ -1,47 +1,54 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ja"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>Bank.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=2;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">AllTests (2017/12/31 11:56:03)</a> &gt; <a href="../../index.html" class="el_group">JavaExtra</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">jp.miyabilink.atm</a> &gt; <span class="el_source">Bank.java</span></div><h1>Bank.java</h1><pre class="source lang-java linenums">/**
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ja"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>Bank.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=2;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">AllTests (2018/01/01 21:54:53)</a> &gt; <a href="../../index.html" class="el_group">JavaExtra</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">jp.miyabilink.atm</a> &gt; <span class="el_source">Bank.java</span></div><h1>Bank.java</h1><pre class="source lang-java linenums">/**
  * jp.miyabilink.atm.Bank
  */
 package jp.miyabilink.atm;
 
-import java.io.FileWriter;
+//import java.io.FileWriter;
 import java.io.IOException;
 
 /**
- * 銀行クラス
+ * 銀行クラス.
  * @author Sempu-Mizuha
- * @version 1.3
+ * @version 1.4
  * @since 1.0 Sempu-Mizuha 2017/12/29 11:45:09 &lt;br&gt;
  * @since 1.1 Sempu-Mizuha 2017/12/29 15:07:53 &lt;br&gt;
  * @since 1.2 Sempu-Mizuha 2017/12/30 0:05:41 &lt;br&gt;
  * @since 1.3 Sempu-Mizuha 2017/12/30 12:14:36 &lt;br&gt;
+ * @since 1.4 Sempu-Mizuha 2017/12/31 12:26:27 &lt;br&gt;
  */
 public class Bank {
+
   /**
-   * 銀行名(必ず3文字以上が設定される)
+   * 銀行名の最小文字数.
+   * @since 1.4 Sempu-Mizuha 2017/12/31 12:36:41 &lt;br&gt;
+   */
+  public static final int CONSTANT = 3;
+  /**
+   * 銀行名(必ず3文字以上が設定される).
    * @since 1.1 Sempu-Mizuha 2017/12/29 15:13:05
    */
   private String name;
   /**
-   * Nameを取得するgetterメソッド
+   * Nameを取得するgetterメソッド.
    * @return Nameを取得する
    * @since 1.3 Sempu-Mizuha 2017/12/29 15:24:41
    */
   public String getName() {
-<span class="fc" id="L30">    return name;</span>
+<span class="fc" id="L37">    return name;</span>
   }
 
 
   /**
-   * nameを登録するメソッド
+   * nameを登録するメソッド.
    * @param name nameを登録する
    * @since 1.3 Sempu-Mizuha 2017/12/30 12:20:08 &lt;br&gt;
    */
-  public void setName(String name) {
-<span class="fc bfc" id="L40" title="All 2 branches covered.">    if (name.length() &lt; 3) {</span>
-<span class="fc" id="L41">      throw new IllegalArgumentException(&quot;名前が不正です&quot;);</span>
+  public void setName(final String name) {
+<span class="fc bfc" id="L47" title="All 2 branches covered.">    if (name.length() &lt; CONSTANT) {</span>
+<span class="fc" id="L48">      throw new IllegalArgumentException(&quot;名前が不正です&quot;);</span>
     }
-<span class="fc" id="L43">    this.name = name;</span>
-<span class="fc" id="L44">  }</span>
+<span class="fc" id="L50">    this.name = name;</span>
+<span class="fc" id="L51">  }</span>
 
 
 
@@ -60,7 +67,7 @@ public class Bank {
    * @since x.x Sempu-Mizuha 2017/12/29 14:01:53
    */
   public String getAddress() {
-<span class="fc" id="L63">    return address;</span>
+<span class="fc" id="L70">    return address;</span>
   }
 
 
@@ -75,9 +82,9 @@ public class Bank {
    * @param address addressを登録する
    * @since x.x Sempu-Mizuha 2017/12/29 14:01:53
    */
-  public void setAddress(String address) {
-<span class="nc" id="L79">    this.address = address;</span>
-<span class="nc" id="L80">  }</span>
+  public void setAddress(final String address) {
+<span class="nc" id="L86">    this.address = address;</span>
+<span class="nc" id="L87">  }</span>
 
 
 
@@ -86,10 +93,10 @@ public class Bank {
 
 
   /**
-   * 銀行住所
+   * 銀行住所.
    * @since 1.1 Sempu-Mizuha 2017/12/29 13:08:03
    */
-  String address;
+  private String address;
 
 
 
@@ -106,7 +113,7 @@ public class Bank {
   @Deprecated
   protected Object clone() throws CloneNotSupportedException {
     // TODO 自動生成されたメソッド・スタブ
-<span class="nc" id="L109">    return super.clone();</span>
+<span class="nc" id="L116">    return super.clone();</span>
   }
 
 
@@ -116,14 +123,14 @@ public class Bank {
 
 
   /**
-   * @(作成したメソッドの説明を↓に記載 &amp; 作成したタグに説明を追加 &amp; x.xにバージョンを記載:この行は削除すること)
-   *
-   * @return
+   * 追加訂正.
+   * @return アドレス文字のバイト配列
    * @see java.lang.String#getBytes()
-   * @since x.x Sempu-Mizuha 2017/12/29 13:41:04
+   * @since x.x Sempu-Mizuha 2017/12/29 13:41:04 &lt;br&gt;
+   * @since 1.4 Sempu-Mizuha 2017/12/31 12:26:27 &lt;br&gt;
    */
   public byte[] getBytes() {
-<span class="nc" id="L126">    return address.getBytes();</span>
+<span class="nc" id="L133">    return address.getBytes();</span>
   }
 
 
@@ -135,47 +142,48 @@ public class Bank {
   /**
    * @(作成したコンストラクターの説明を↓に記載 &amp; 作成したタグに説明を追加 &amp; x.xにバージョンを記載:この行は削除すること)
    *
-   * @param name
-   * @param address
+   * @param name おまけ
+   * @param address おまけ
    * @since x.x Sempu-Mizuha 2017/12/29 13:03:44
    */
-<span class="fc" id="L142">  public Bank(String name, String address) {</span>
-<span class="fc" id="L143">    this.name = name;</span>
-<span class="fc" id="L144">    this.address = address;</span>
-<span class="fc" id="L145">  }</span>
-
-  /**
-   * 因数を受け取らないコンストレクター
-   * @since 1.3 Sempu-Mizuha 2017/12/30 12:40:06 &lt;br&gt;
-   */
-<span class="fc" id="L151">  public Bank() {</span>
+<span class="fc" id="L149">  public Bank(final String name, final String address) {</span>
+<span class="fc" id="L150">    this.name = name;</span>
+<span class="fc" id="L151">    this.address = address;</span>
 <span class="fc" id="L152">  }</span>
 
+  /**
+   * 因数を受け取らないコンストレクター.
+   * @since 1.3 Sempu-Mizuha 2017/12/30 12:40:06 &lt;br&gt;
+   */
+<span class="fc" id="L158">  public Bank() {</span>
+<span class="fc" id="L159">  }</span>
+
 
   /**
-   * 新規名義を作成する
+   * 新規名義を作成する.
    * @param owner 名義名
    * @param initalBalance 新規通帳金額
    * @throws IOException 例外
    * @throws NullPointerException 例外
    * @since 1.1 Sempu-Mizuha 2017/12/29 13:25:52
    */
-  public void addAccount(String owner, int initalBalance) throws IOException, NullPointerException {
-<span class="nc" id="L164">    FileWriter fw = new FileWriter(&quot;aaaa&quot;);</span>
+  public void addAccount(final String owner, final int initalBalance)
+      throws IOException, NullPointerException {
+    // FileWriter fw = new FileWriter(&quot;aaaa&quot;);
 
-<span class="nc" id="L166">  }</span>
+<span class="nc" id="L174">  }</span>
 
   /**
    * @(作成したメソッドの説明を↓に記載 &amp; 作成したタグに説明を追加 &amp; x.xにバージョンを記載:この行は削除すること)
    *
-   * @param args
+   * @param args 外部からの指定されたパラメータ
    * @throws IOException @(ここにタグの説明を記載)
    * @since x.x Sempu-Mizuha 2017/12/29 15:50:23
    */
-  public static void main(String[] args) throws IOException {
+  public static void main(final String[] args) throws IOException {
     // TODO 自動生成されたメソッド・スタブ
-<span class="nc" id="L177">    System.out.println(&quot;試験用のメインメソッドです&quot;);</span>
-<span class="nc" id="L178">  }</span>
+<span class="nc" id="L185">    System.out.println(&quot;試験用のメインメソッドです&quot;);</span>
+<span class="nc" id="L186">  }</span>
 
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>AllTests (2017/12/31 11:56:03)</div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>AllTests (2018/01/01 21:54:53)</div></body></html>

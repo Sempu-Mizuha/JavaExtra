@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ja"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>Movie.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=2;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">AllTests (2018/01/01 21:54:53)</a> &gt; <a href="../../index.html" class="el_group">JavaExtra</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">jp.miyabilink.atm</a> &gt; <span class="el_source">Movie.java</span></div><h1>Movie.java</h1><pre class="source lang-java linenums">/**
+ * パッケージ.クラス名:
+ * jp.miyabilink.atm.Movie
+ */
+package jp.miyabilink.atm;
+
+import java.time.LocalDate;
+
+/**
+ * 映画のタイトルとリリース日を管理するクラス.
+ * @author Sempu-Mizuha
+ * @version 1.0
+ * @since 1.0 Sempu-Mizuha 2018/01/01 18:21:39 &lt;br&gt;
+ */
+public class Movie {
+  /**
+   * 映画タイトル.
+   * @since 1.0 Sempu-Mizuha 2018/01/01 19:08:17 &lt;br&gt;
+   */
+  private String title;
+  /**
+   * 映画リリース日.
+   * @since 1.0 Sempu-Mizuha 2018/01/01 19:08:29 &lt;br&gt;
+   */
+  private LocalDate release;
+
+
+  /**
+   * 映画クラスのコンストラクタ.
+   * @param title 映画タイトル
+   * @throws IllegalArgumentException
+   *         title に null が入った場合。
+   * @since 1.0 Sempu-Mizuha 2018/01/01 18:25:36 &lt;br&gt;
+   */
+<span class="fc" id="L35">  public Movie(final String title) {</span>
+<span class="fc bfc" id="L36" title="All 2 branches covered.">    if (title == null) {</span>
+<span class="fc" id="L37">      throw new IllegalArgumentException(&quot;タイトルにnullはセットできません。&quot;);</span>
+    }
+<span class="fc" id="L39">    this.title = title;</span>
+<span class="fc" id="L40">  }</span>
+
+
+  /**
+   * 映画クラスのコンストラクタ.
+   * @since 1.0 Sempu-Mizuha 2018/01/01 18:21:39 &lt;br&gt;
+   */
+<span class="fc" id="L47">  public Movie() {</span>
+<span class="fc" id="L48">  }</span>
+
+
+  /**
+   * titleを取得するメソッド.
+   * @return titleを取得する
+   * @since 1.0 Sempu-Mizuha 2018/01/01 18:26:39 &lt;br&gt;
+   */
+  public String getTitle() {
+<span class="fc" id="L57">    return title;</span>
+  }
+
+
+  /**
+   * titleを登録するメソッド.
+   * @param title titleを登録する
+   * @throws IllegalArgumentException
+   *         title に null が入った場合。
+   * @since 1.0 Sempu-Mizuha 2018/01/01 18:26:39 &lt;br&gt;
+   */
+  public void setTitle(final String title) {
+<span class="fc bfc" id="L69" title="All 2 branches covered.">    if (title == null) {</span>
+<span class="fc" id="L70">      throw new IllegalArgumentException(&quot;タイトルにnullはセットできません。&quot;);</span>
+    }
+<span class="fc" id="L72">    this.title = title;</span>
+<span class="fc" id="L73">  }</span>
+
+
+  /**
+   * releaseを取得するメソッド.
+   * @return releaseを取得する
+   * @since 1.0 Sempu-Mizuha 2018/01/01 18:26:39 &lt;br&gt;
+   */
+  public LocalDate getRelease() {
+<span class="fc" id="L82">    return release;</span>
+  }
+
+
+  /**
+   * releaseを登録するメソッド.
+   * @param release releaseを登録する
+   * @throws IllegalArgumentException
+   *         release に null が入った場合。release に 現在より未来の日付が指定された場合。
+   * @since 1.0 Sempu-Mizuha 2018/01/01 18:26:39 &lt;br&gt;
+   */
+  public void setRelease(final LocalDate release) {
+<span class="fc bfc" id="L94" title="All 2 branches covered.">    if (release == null) {</span>
+<span class="fc" id="L95">      throw new IllegalArgumentException(&quot;リリース日にnullはセットできません。&quot;);</span>
+    }
+<span class="fc bfc" id="L97" title="All 2 branches covered.">    if (release.isAfter(LocalDate.now())) {</span>
+<span class="fc" id="L98">      throw new IllegalArgumentException(&quot;公開日は現在より未来の日付を指定できません。&quot;);</span>
+    }
+<span class="fc" id="L100">    this.release = release;</span>
+<span class="fc" id="L101">  }</span>
+
+
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>AllTests (2018/01/01 21:54:53)</div></body></html>

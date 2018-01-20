@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="JavaExtra">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../../../Applications/Eclipse_4.7.0.app/Contents/Eclipse/"/>
+    <property name="junit.output.dir" value="/Users/MIBOX/Desktop/junit"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+    <path id="commons-lang.userclasspath">
+        <pathelement location="../../../../Applications/Eclipse_4.7.0.app/Contents/java/8/Home/commons-lang3-3.6/commons-lang3-3.6.jar"/>
+    </path>
+    <path id="commons-logging.userclasspath">
+        <pathelement location="../../../../Applications/Eclipse_4.7.0.app/Contents/java/8/Home/commons-logging-1.2/commons-logging-1.2.jar"/>
+    </path>
+    <path id="JDBC システム.userclasspath">
+        <pathelement location="../../../../Applications/h2/bin/h2-1.4.196.jar"/>
+    </path>
+    <path id="JUnit 4.libraryclasspath">
+        <pathelement location="${ECLIPSE_HOME}plugins/org.junit_4.12.0.v201504281640/junit.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.hamcrest.core_1.3.0.v201303031735.jar"/>
+    </path>
+    <path id="JavaExtra.classpath">
+        <pathelement location="bin"/>
+        <path refid="commons-lang.userclasspath"/>
+        <path refid="commons-logging.userclasspath"/>
+        <path refid="JDBC システム.userclasspath"/>
+        <path refid="JUnit 4.libraryclasspath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="JavaExtra.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="AccountTest (1)">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="junit.AccountTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="JavaExtra.classpath"/>
+        </junit>
+    </target>
+    <target name="AccountTest">
+        <java classname="test.AccountTest" failonerror="true" fork="yes">
+            <classpath refid="JavaExtra.classpath"/>
+        </java>
+    </target>
+    <target name="AllTests">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="junit.AllTests" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="JavaExtra.classpath"/>
+        </junit>
+    </target>
+    <target name="Bank">
+        <java classname="jp.miyabilink.atm.Bank" failonerror="true" fork="yes">
+            <classpath refid="JavaExtra.classpath"/>
+        </java>
+    </target>
+    <target name="BankTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="junit.BankTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="JavaExtra.classpath"/>
+        </junit>
+    </target>
+    <target name="BankTest2">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="junit.BankTest2" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="JavaExtra.classpath"/>
+        </junit>
+    </target>
+    <target name="JavaExtra">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="junit.AccountTest" todir="${junit.output.dir}"/>
+            <test name="junit.AllTests" todir="${junit.output.dir}"/>
+            <test name="junit.BankTest" todir="${junit.output.dir}"/>
+            <test name="junit.BankTest2" todir="${junit.output.dir}"/>
+            <test name="junit.sample" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="JavaExtra.classpath"/>
+        </junit>
+    </target>
+    <target name="junit">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="junit.AccountTest" todir="${junit.output.dir}"/>
+            <test name="junit.AllTests" todir="${junit.output.dir}"/>
+            <test name="junit.BankTest" todir="${junit.output.dir}"/>
+            <test name="junit.BankTest2" todir="${junit.output.dir}"/>
+            <test name="junit.sample" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="JavaExtra.classpath"/>
+        </junit>
+    </target>
+    <target name="Main">
+        <java classname="Main.Main" failonerror="true" fork="yes">
+            <classpath refid="JavaExtra.classpath"/>
+        </java>
+    </target>
+    <target name="pra1">
+        <java classname="Main.pra1" failonerror="true" fork="yes">
+            <classpath refid="JavaExtra.classpath"/>
+        </java>
+    </target>
+    <target name="Pra2">
+        <java classname="Main.Pra2" failonerror="true" fork="yes">
+            <classpath refid="JavaExtra.classpath"/>
+        </java>
+    </target>
+    <target name="Pra3">
+        <java classname="Main.Pra3" failonerror="true" fork="yes">
+            <classpath refid="JavaExtra.classpath"/>
+        </java>
+    </target>
+    <target name="Pra6">
+        <java classname="Main.Pra6" failonerror="true" fork="yes">
+            <classpath refid="JavaExtra.classpath"/>
+        </java>
+    </target>
+    <target name="sample">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="junit.sample" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="JavaExtra.classpath"/>
+        </junit>
+    </target>
+    <target name="Session11">
+        <java classname="Main.Session11" failonerror="true" fork="yes">
+            <classpath refid="JavaExtra.classpath"/>
+        </java>
+    </target>
+    <target name="Session12">
+        <java classname="Main.Session12" failonerror="true" fork="yes">
+            <classpath refid="JavaExtra.classpath"/>
+        </java>
+    </target>
+    <target name="Session14">
+        <java classname="Main.Session14" failonerror="true" fork="yes">
+            <classpath refid="JavaExtra.classpath"/>
+        </java>
+    </target>
+    <target name="Session2">
+        <java classname="Main.Session2" failonerror="true" fork="yes">
+            <classpath refid="JavaExtra.classpath"/>
+        </java>
+    </target>
+    <target name="Session3">
+        <java classname="Main.Session3" failonerror="true" fork="yes">
+            <classpath refid="JavaExtra.classpath"/>
+        </java>
+    </target>
+    <target name="Session4">
+        <java classname="Main.Session4" failonerror="true" fork="yes">
+            <classpath refid="JavaExtra.classpath"/>
+        </java>
+    </target>
+    <target name="Session5">
+        <java classname="Main.Session5" failonerror="true" fork="yes">
+            <classpath refid="JavaExtra.classpath"/>
+        </java>
+    </target>
+    <target name="Session6">
+        <java classname="Main.Session6" failonerror="true" fork="yes">
+            <classpath refid="JavaExtra.classpath"/>
+        </java>
+    </target>
+    <target name="Session7 (1)">
+        <java classname="Main.Session7" failonerror="true" fork="yes">
+            <classpath refid="JavaExtra.classpath"/>
+        </java>
+    </target>
+    <target name="Session7">
+        <java classname="Main.Launcher" failonerror="true" fork="yes">
+            <arg line="Main.MemoryEater I"/>
+            <classpath refid="JavaExtra.classpath"/>
+        </java>
+    </target>
+    <target name="Session8">
+        <java classname="Main.Session8" failonerror="true" fork="yes">
+            <classpath refid="JavaExtra.classpath"/>
+        </java>
+    </target>
+    <target name="Session9">
+        <java classname="Main.Session9" failonerror="true" fork="yes">
+            <classpath refid="JavaExtra.classpath"/>
+        </java>
+    </target>
+    <target name="junitreport">
+        <junitreport todir="${junit.output.dir}">
+            <fileset dir="${junit.output.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${junit.output.dir}"/>
+        </junitreport>
+    </target>
+</project>
